@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">PickaFlick</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="titleScreenTitle">PickaFlick</string>
+    <string name="swipeText">Swipe Left To Continue</string>
+    <string name="title_activity_availability">Availability</string>
+    <string name="availability_title">Select Your Service</string>
+    <string name="startButtonTitle">Click to Begin</string>
+    <string name="title_activity_genre">Genre</string>
+    <string name="genre_title">Select Genre</string>
+    <string name="action_button_title">Action</string>
+    <string name="comedy_button_title">Comedy</string>
+    <string name="western_button_title">Western</string>
+    <string name="availability_screen_button">Continue</string>
+</resources>
