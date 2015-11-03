@@ -2,14 +2,20 @@ package com.greatwhite.pickaflick;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * MainActivity is used as a splash screen for Pickaflick.
+ * Display logo/text and allow the user to tap to move on.
+ */
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -22,10 +28,21 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button= (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+//        Button button = (Button) findViewById(R.id.button);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, Availability.class));
+//            }
+//        });
+
+        // Tap the screen to move to the next activity
+        View background = findViewById(R.id.main_background);
+        background.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, Availability.class));
+                // we'll probably drop the availability search,
+                // so the following line will likely be used in production:
+                // startActivity(new Intent(MainActivity.this, Genre.class));
             }
         });
     }

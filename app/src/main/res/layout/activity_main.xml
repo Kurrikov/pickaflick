@@ -1,10 +1,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:background="#FBB917">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:background="#e6e6e6"
+    android:id="@+id/main_background"
+    android:clickable="true"
+    android:nestedScrollingEnabled="true">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,15 +22,19 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="54dp"
         android:textSize="@dimen/abc_text_size_display_3_material"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#eb000000" />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/startButtonTitle"
-        android:id="@+id/button"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Tap to begin"
+        android:id="@+id/textView4"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:textStyle="bold"
+        android:textColor="#66000000"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="64dp" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

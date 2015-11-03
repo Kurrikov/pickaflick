@@ -25,6 +25,9 @@
         <activity
             android:name=".Genre"
             android:label="@string/title_activity_genre" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.greatwhite.pickaflick.Genre" />
         </activity>
     </application>
 

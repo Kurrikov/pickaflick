@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/Users/Administrator/AndroidStudioProjects/PickaFlick/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="/Users/Administrator/AndroidStudioProjects/PickaFlick/app/build/intermediates/pre-dexed/debug/classes-32184f9e6d8f945459a69fe1c24d1fa1c473d8d2.jar" />
-    </item>
-    <item
-        jar="/Users/Administrator/AndroidStudioProjects/PickaFlick/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="/Users/Administrator/AndroidStudioProjects/PickaFlick/app/build/intermediates/pre-dexed/debug/classes-afdee109abc3173492625c41d8e5b4623c502470.jar" />
-    </item>
-    <item
-        jar="/Users/Administrator/AndroidStudioProjects/PickaFlick/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="/Users/Administrator/AndroidStudioProjects/PickaFlick/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-f72f781737245991af534e24b5899fa56ae65918.jar" />
-    </item>
-    <item
-        jar="/Users/Administrator/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
+        jar="/home/kurrikov/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="/Users/Administrator/AndroidStudioProjects/PickaFlick/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-e5246cc2dbd6c194e6e951b456df60083afeea02.jar" />
+        <dex dex="/home/kurrikov/Documents/KU 2015 Fall/EECS 448/pickaflick/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-44176959545835e9b36c5c3269042970b1fcb2af.jar" />
+    </item>
+    <item
+        jar="/home/kurrikov/Documents/KU 2015 Fall/EECS 448/pickaflick/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/home/kurrikov/Documents/KU 2015 Fall/EECS 448/pickaflick/app/build/intermediates/pre-dexed/debug/classes-f9482ca034121016dc48ff2f4f9d778a97054c3c.jar" />
+    </item>
+    <item
+        jar="/home/kurrikov/Documents/KU 2015 Fall/EECS 448/pickaflick/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="/home/kurrikov/Documents/KU 2015 Fall/EECS 448/pickaflick/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-b5d56f18feed6d692ce69cf2a775ef4aa19348a2.jar" />
+    </item>
+    <item
+        jar="/home/kurrikov/Documents/KU 2015 Fall/EECS 448/pickaflick/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="/home/kurrikov/Documents/KU 2015 Fall/EECS 448/pickaflick/app/build/intermediates/pre-dexed/debug/classes-fc4636cede47054a39cf35c1b89e6deabc602e65.jar" />
     </item>
 
 </items>
