@@ -1,10 +1,8 @@
 package com.example.keon.imdbproject;
 
 import java.util.List;
-
 import info.movito.themoviedbapi.TmdbApi;
 import info.movito.themoviedbapi.TmdbDiscover;
-import info.movito.themoviedbapi.TmdbMovies;
 import info.movito.themoviedbapi.model.Discover;
 import info.movito.themoviedbapi.model.MovieDb;
 import info.movito.themoviedbapi.model.core.MovieResultsPage;
@@ -26,7 +24,7 @@ public class TmdbRunnable implements Runnable{
         Discover discover = tmdbMoviesobject.getDiscover();
         TmdbDiscover tmdbDiscover = new TmdbApi(API_ID).getDiscover();
         MovieResultsPage movieResultsPage = tmdbDiscover.getDiscover(discover);
-        tmdbMoviesobject.setMovieDbs(movieResultsPage.getResults());
-        tmdbMoviesobject.listCorrector();
+        List<MovieDb> filteredMovies = tmdbMoviesobject.listCorrector(movieResultsPage.getResults());
+        tmdbMoviesobject.createMoviesList(filteredMovies);
     }
 }

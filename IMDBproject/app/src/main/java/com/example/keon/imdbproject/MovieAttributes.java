@@ -1,16 +1,13 @@
 package com.example.keon.imdbproject;
 
-import android.content.Context;
-import android.media.Image;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.widget.ImageView;
-
-import com.squareup.picasso.Picasso;
-
-import java.util.List;
-
+import java.io.IOException;
+import java.net.URL;
 import info.movito.themoviedbapi.model.MovieDb;
-import info.movito.themoviedbapi.model.people.Person;
-import info.movito.themoviedbapi.model.people.PersonCast;
+
 
 /**
  * Created by Keon on 11/10/2015.
@@ -23,18 +20,16 @@ public class MovieAttributes {
     private int runtime;
     private float ratings;
     private String releaseDate;
-    private ImageView movieImage;
-    //float popularity;
+    private Bitmap movieImage;
 
     public MovieAttributes(MovieDb movie){
-        this.title = movie.getTitle();
-        this.overview = movie.getOverview();
-        this.imageURL = "http://image.tmdb.org/t/p/" + movie.getPosterPath();
-        this.runtime = movie.getRuntime();
-        this.ratings = movie.getVoteAverage();
-        this.releaseDate = movie.getReleaseDate();
-        //this.popularity = movie.getPopularity();
-        loadImage(this.imageURL);
+        title = movie.getTitle();
+        overview = movie.getOverview();
+        imageURL = "http://image.tmdb.org/t/p/w500" + movie.getPosterPath();
+        runtime = movie.getRuntime();
+        ratings = movie.getVoteAverage();
+        releaseDate = movie.getReleaseDate();
+        setImage();
     }
 
     public String getTitle(){
@@ -57,14 +52,31 @@ public class MovieAttributes {
         return releaseDate;
     }
 
-    public ImageView getImage(){
+    public Bitmap getImage(){
         return movieImage;
     }
 
-    public void loadImage(String imageURL){
-        /*Picasso.with(moviePoster.getContext())
-                .load(imageURL)
-                .resize(this.imageHeight,this.imageWidth)
-                .into(movieImage);*/
+    private void setImage(){
+        URL url = null;
+        try {
+            url = new URL(imageURL);
+            movieImage = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            e.getMessage();
+        }
+    }
+
+    public ImageView getImageView(ImageView imageView, int width, int height){
+        movieImage = Bitmap.createScaledBitmap(movieImage, width, height ,false);
+        imageView.setImageBitmap(movieImage);
+        return imageView;
+    }
+
+    public ImageView getImageView(ImageView imageView){
+        imageView.setImageBitmap(movieImage);
+        return imageView;
     }
 }

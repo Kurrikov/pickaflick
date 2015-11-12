@@ -1,14 +1,7 @@
 package com.example.keon.imdbproject;
 
-import android.content.Context;
-import android.media.Image;
-
-//import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import info.movito.themoviedbapi.model.Artwork;
 import info.movito.themoviedbapi.model.MovieDb;
 
 /**
@@ -16,21 +9,14 @@ import info.movito.themoviedbapi.model.MovieDb;
  */
 public class TmdbMoviesObject extends TmdbObject {
 
-    public class ImageException extends Exception {
-        public ImageException() {
-            super("Image does not exist");
-        }
-    }
-
     private List<MovieAttributes> moviesList;
-    private List<MovieDb> movieDbs;
 
     public TmdbMoviesObject(String MPAA_Rating, String genre, int era, float minRating) throws GenreException {
         super(MPAA_Rating, genre, era, minRating);
         moviesList = new ArrayList<MovieAttributes>();
     }
 
-    public void createMoviesList(){
+    public void createMoviesList(List<MovieDb> movieDbs){
         for (int i = 0; i < movieDbs.size(); i++) {
             this.moviesList.add(new MovieAttributes(movieDbs.get(i)));
         }
@@ -41,16 +27,11 @@ public class TmdbMoviesObject extends TmdbObject {
     }
 
     //the default tmdb method does a poor job in filtering movies by years of release, so this method was added to rectify that issue
-    public void listCorrector() {
+    public List<MovieDb> listCorrector(List<MovieDb> movieDbs) {
         for (int i = 0; i < movieDbs.size(); i++) {
             int releaseYear = Integer.parseInt(movieDbs.get(i).getReleaseDate().substring(0, 4));
             if (releaseYear > era + 9 || releaseYear < era) movieDbs.remove(i);
         }
+        return movieDbs;
     }
-
-
-    public void setMovieDbs(List<MovieDb> movieDbs){
-        this.movieDbs = movieDbs;
-    }
-
 }
