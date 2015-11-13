@@ -25,6 +25,6 @@ public class TmdbRunnable implements Runnable{
         TmdbDiscover tmdbDiscover = new TmdbApi(API_ID).getDiscover();
         MovieResultsPage movieResultsPage = tmdbDiscover.getDiscover(discover);
         List<MovieDb> filteredMovies = tmdbMoviesobject.listCorrector(movieResultsPage.getResults());
-        tmdbMoviesobject.createMoviesList(filteredMovies);
+        tmdbMoviesobject.setMoviesList(filteredMovies);
     }
 }

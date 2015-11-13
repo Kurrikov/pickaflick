@@ -16,7 +16,7 @@ public class TmdbMoviesObject extends TmdbObject {
         moviesList = new ArrayList<MovieAttributes>();
     }
 
-    public void createMoviesList(List<MovieDb> movieDbs){
+    public void setMoviesList(List<MovieDb> movieDbs){
         for (int i = 0; i < movieDbs.size(); i++) {
             this.moviesList.add(new MovieAttributes(movieDbs.get(i)));
         }
