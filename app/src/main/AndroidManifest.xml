@@ -16,13 +16,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Availability"
-            android:label="@string/title_activity_availability" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.greatwhite.pickaflick.Availability" />
-        </activity>
-        <activity
             android:name=".Genre"
             android:label="@string/title_activity_genre" >
             <meta-data

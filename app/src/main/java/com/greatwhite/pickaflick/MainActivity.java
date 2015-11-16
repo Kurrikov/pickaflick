@@ -28,21 +28,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        Button button = (Button) findViewById(R.id.button);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this, Availability.class));
-//            }
-//        });
-
         // Tap the screen to move to the next activity
         View background = findViewById(R.id.main_background);
         background.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Availability.class));
-                // we'll probably drop the availability search,
-                // so the following line will likely be used in production:
-                // startActivity(new Intent(MainActivity.this, Genre.class));
+                startActivity(new Intent(MainActivity.this, Genre.class));
             }
         });
     }
