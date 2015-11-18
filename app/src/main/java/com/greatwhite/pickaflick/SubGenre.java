@@ -9,74 +9,76 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+//This entire class is essentially a copy of Genre.java, with name and reference changes.
 
-public class Genre extends AppCompatActivity {
+
+public class SubGenre extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_genre);
+        setContentView(R.layout.activity_sub_genre);
 
-        Button button3= (Button) findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
+        Button button12 = (Button) findViewById(R.id.button12);
+        button12.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Genre.this, SubGenre.class));
+                startActivity(new Intent(SubGenre.this, Era.class));
             }
         });
 
         Button button4= (Button) findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Genre.this, SubGenre.class));
+                startActivity(new Intent(SubGenre.this, Era.class));
             }
         });
 
         Button button5= (Button) findViewById(R.id.button5);
         button5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Genre.this, SubGenre.class));
+                startActivity(new Intent(SubGenre.this, Era.class));
             }
         });
 
         Button button6= (Button) findViewById(R.id.button6);
         button6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Genre.this, SubGenre.class));
+                startActivity(new Intent(SubGenre.this, Era.class));
             }
         });
 
         Button button7= (Button) findViewById(R.id.button7);
         button7.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Genre.this, SubGenre.class));
+                startActivity(new Intent(SubGenre.this, Era.class));
             }
         });
 
         Button button8= (Button) findViewById(R.id.button8);
         button8.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Genre.this, SubGenre.class));
+                startActivity(new Intent(SubGenre.this, Era.class));
             }
         });
 
         Button button9= (Button) findViewById(R.id.button9);
         button9.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Genre.this, SubGenre.class));
+                startActivity(new Intent(SubGenre.this, Era.class));
             }
         });
 
         Button button10= (Button) findViewById(R.id.button10);
         button10.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Genre.this, SubGenre.class));
+                startActivity(new Intent(SubGenre.this, Era.class));
             }
         });
 
         Button button11= (Button) findViewById(R.id.button11);
         button11.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Genre.this, SubGenre.class));
+                startActivity(new Intent(SubGenre.this, Era.class));
             }
         });
     }
@@ -84,7 +86,7 @@ public class Genre extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_genre, menu);
+        getMenuInflater().inflate(R.menu.menu_sub_genre, menu);
         return true;
     }
 
