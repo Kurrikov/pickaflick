@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">My Application2</string>
-    <string name="title_activity_main">MainActivity</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="SignInTitle">Sign In</string>
-    <string name="LoginButtonText">Login</string>
-</resources>
