@@ -20,12 +20,12 @@
 
 --Era Screen--
     <string name="title_activity_era">Select Era</string>
-    <string name="_2010s_button">2010s</string>
-    <string name="_2000s_button">2000s</string>
-    <string name="_1990s_button">1990s</string>
-    <string name="_1980s_button">1980s</string>
-    <string name="_1970s_button">1970s</string>
-    <string name="_1960s_button">1960s</string>
+    <string name="_2010s_button">2010\'s</string>
+    <string name="_2000s_button">2000\'s</string>
+    <string name="_1990s_button">1990\'s</string>
+    <string name="_1980s_button">1980\'s</string>
+    <string name="_1970s_button">1970\'s</string>
+    <string name="_1960s_button">1960\'s</string>
 
 --Mpaa Screen--
     <string name="title_activity_mpaa_ratings">Select An MPAA Rating</string>

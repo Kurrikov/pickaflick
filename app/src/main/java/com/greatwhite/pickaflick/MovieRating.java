@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MovieRating extends ActionBarActivity {
@@ -16,24 +17,41 @@ public class MovieRating extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_rating);
 
+        final Intent intent = new Intent(MovieRating.this, MovieDetailActivity.class);
+
+        final Bundle bundle = getIntent().getExtras();
+
+        TextView myTextView = (TextView) findViewById(R.id.textView7);
+        myTextView.setText("The mpaarating is " + bundle.getString("mpaaratings"));
+
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(MovieRating.this, MovieDetailActivity.class));
+                //add to bundle and continue passing bundle to next activity
+                bundle.putString("movierating", "above9.0");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
         Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(MovieRating.this, MovieDetailActivity.class));
+                bundle.putString("movierating", "above7.5");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
         Button button3 = (Button) findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(MovieRating.this, MovieDetailActivity.class));
+                bundle.putString("movierating", "above6.0");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
     }

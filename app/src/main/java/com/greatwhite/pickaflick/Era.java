@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class Era extends ActionBarActivity {
@@ -16,38 +17,61 @@ public class Era extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_era);
 
+        final Intent intent = new Intent(Era.this, MpaaRatings.class);
+
+        final Bundle bundle = getIntent().getExtras();
+
+        TextView myTextView = (TextView) findViewById(R.id.textView5);
+        myTextView.setText("The subgenre is " + bundle.getString("subgenre"));
+
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Era.this, MpaaRatings.class));
+                //add to bundle and continue passing bundle to next activity
+                bundle.putString("era", "2010's");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
         Button button3 = (Button) findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Era.this, MpaaRatings.class));
+                bundle.putString("era", "2000's");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
         Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Era.this, MpaaRatings.class));
+                bundle.putString("era", "1990's");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
         Button button5 = (Button) findViewById(R.id.button5);
         button5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Era.this, MpaaRatings.class));
+                bundle.putString("era", "1980's");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
         Button button4 = (Button) findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Era.this, MpaaRatings.class));
+                bundle.putString("era", "1970's");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
     }

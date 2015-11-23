@@ -20,6 +20,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="@string/_2010s_button"
         android:id="@+id/button1"
         android:background="#b4ff0000"
@@ -30,6 +31,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="@string/_2000s_button"
         android:id="@+id/button3"
         android:background="#b4ff0000"
@@ -41,6 +43,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="@string/_1990s_button"
         android:id="@+id/button2"
         android:background="#b4ff0000"
@@ -52,6 +55,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="@string/_1980s_button"
         android:id="@+id/button5"
         android:background="#b4ff0000"
@@ -63,6 +67,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="@string/_1970s_button"
         android:id="@+id/button4"
         android:background="#b4ff0000"
@@ -70,6 +75,15 @@
         android:layout_below="@+id/button5"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:id="@+id/textView5"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
+import android.widget.TextView;
 
 public class MpaaRatings extends ActionBarActivity {
 
@@ -16,31 +16,51 @@ public class MpaaRatings extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mpaa_ratings);
 
+        final Intent intent = new Intent(MpaaRatings.this, MovieRating.class);
+
+        final Bundle bundle = getIntent().getExtras();
+
+        TextView myTextView = (TextView) findViewById(R.id.textView6);
+        myTextView.setText("The era is " + bundle.getString("era"));
+
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(MpaaRatings.this, MovieRating.class));
+                //add to bundle and continue passing bundle to next activity
+                bundle.putString("mpaaratings", "R");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
         Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(MpaaRatings.this, MovieRating.class));
+                bundle.putString("mpaaratings", "PG-13");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
         Button button3 = (Button) findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(MpaaRatings.this, MovieRating.class));
+                bundle.putString("mpaaratings", "PG");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
         Button button4 = (Button) findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(MpaaRatings.this, MovieRating.class));
+                bundle.putString("mpaaratings", "G");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
     }

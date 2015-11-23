@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 /**
@@ -22,6 +23,23 @@ public class MovieDetailActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
+
+        Bundle bundle = getIntent().getExtras();
+
+        TextView myTextView = (TextView) findViewById(R.id.textView2);
+        myTextView.setText("The genre is " + bundle.getString("genre"));
+
+        TextView myTextView1 = (TextView) findViewById(R.id.textView3);
+        myTextView1.setText("The subgenre is " + bundle.getString("subgenre"));
+
+        TextView myTextView2 = (TextView) findViewById(R.id.textView4);
+        myTextView2.setText("The era is " + bundle.getString("era"));
+
+        TextView myTextView3 = (TextView) findViewById(R.id.textView5);
+        myTextView3.setText("The mpaaratings is " + bundle.getString("mpaaratings"));
+
+        TextView myTextView4 = (TextView) findViewById(R.id.textView6);
+        myTextView4.setText("The movierating is " + bundle.getString("movierating"));
 
         // Show the Up button in the action bar.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
