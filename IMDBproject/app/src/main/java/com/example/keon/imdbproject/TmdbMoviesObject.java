@@ -11,14 +11,16 @@ public class TmdbMoviesObject extends TmdbObject {
 
     private List<MovieAttributes> moviesList;
 
-    public TmdbMoviesObject(String MPAA_Rating, String genre, int era, float minRating) throws GenreException {
-        super(MPAA_Rating, genre, era, minRating);
-        moviesList = new ArrayList<MovieAttributes>();
+    public TmdbMoviesObject(String MPAA_Rating, String genre, String subgenre, int era, float minRating) throws GenreException {
+        super(MPAA_Rating, genre, subgenre, era, minRating);
     }
 
     public void setMoviesList(List<MovieDb> movieDbs){
-        for (int i = 0; i < movieDbs.size(); i++) {
-            this.moviesList.add(new MovieAttributes(movieDbs.get(i)));
+        if(movieDbs != null){
+            moviesList = new ArrayList<MovieAttributes>();
+            for (int i = 0; i < movieDbs.size(); i++) {
+                this.moviesList.add(new MovieAttributes(movieDbs.get(i)));
+            }
         }
     }
 
@@ -34,4 +36,6 @@ public class TmdbMoviesObject extends TmdbObject {
         }
         return movieDbs;
     }
+
+
 }

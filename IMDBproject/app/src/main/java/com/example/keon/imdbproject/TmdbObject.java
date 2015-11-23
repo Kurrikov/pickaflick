@@ -2,41 +2,37 @@ package com.example.keon.imdbproject;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import info.movito.themoviedbapi.model.Discover;
-
 
 /**
  * Created by Keon on 11/4/2015.
  */
 public class TmdbObject {
 
-
-    public class GenreException extends Exception{
-        public GenreException(String Genre){
-            super("This Genre doesn't exist: " + Genre);
-        }
-    }
-
     private int NumberOfPages = 1;
     protected int era;
     private Discover discover;
     private Map<String,String> map;
 
-    TmdbObject(String MPAA_Rating, String genre, int era, float minRating) throws GenreException{
+    TmdbObject(String MPAA_Rating, String genre, String subgenre, int era, float minRating) throws GenreException{
         this.era = era;
         setHashMap();
-        setDiscoverProperties(MPAA_Rating,genre,era,minRating);
+        setDiscoverProperties(MPAA_Rating,genre,subgenre,era,minRating);
     }
 
-    private void setDiscoverProperties(String MPAA_Rating, String Genre, int decade, float minRating) throws GenreException{
+    private void setDiscoverProperties(String MPAA_Rating, String Genre, String Subgenre, int decade, float minRating) throws GenreException{
+
         discover = new Discover();
-        String genre = map.get(Genre);
-        if(genre == null) throw new GenreException(Genre);
-        else{
+        String genreID = map.get(Genre);
+        String subgenreID = map.get(Subgenre);
+
+        if((genreID.equals(null) || subgenreID.equals(null))) throw new GenreException(Genre);      //The Genre or the Subgenre doesn't exist.
+        else if(subgenreID.equals(genreID)) throw new GenreException();                             //When Genre and Subgenre are the same, returns an exception. This is not allowed.
+
+        else{                                                                                       //this is where we set our filtering criteria (not calling from database here)
             discover.page(NumberOfPages)
                     .language("en")
-                    .withGenres(genre)
+                    .withGenres(DiscoverGenreInputCreator(genreID,subgenreID))
                     .voteAverageGte(minRating)
                     .sortBy("popularity.desc")
                     .certificationCountry("US")
@@ -46,8 +42,14 @@ public class TmdbObject {
         }
     }
 
+    private String DiscoverGenreInputCreator(String genreID, String subgenreID){
+        if(subgenreID != "") return genreID + " , " + subgenreID;
+        else return genreID;
+    }
+
     private void setHashMap(){
         map = new HashMap<String,String>();
+        map.put("","");
         map.put("Action", "28");
         map.put("Adventure", "12");
         map.put("Animation", "16");
@@ -72,6 +74,15 @@ public class TmdbObject {
 
     public Discover getDiscover(){
         return this.discover;
+    }
+
+    public class GenreException extends Exception{
+        public GenreException(String Genre) {
+            super("Failed to find the specified Genre: " + Genre);
+        }
+        public GenreException(){
+            super("The Genre and Subgenre cannot be the same.");
+        }
     }
 }
 

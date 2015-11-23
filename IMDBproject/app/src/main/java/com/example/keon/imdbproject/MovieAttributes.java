@@ -11,6 +11,8 @@ import info.movito.themoviedbapi.model.MovieDb;
 
 /**
  * Created by Keon on 11/10/2015.
+ * This class stores all the movie info for a given movie. It also
+ * fetches the movie poster from the appropriate tmdb link.
  */
 public class MovieAttributes {
 
@@ -61,11 +63,9 @@ public class MovieAttributes {
         try {
             url = new URL(imageURL);
             movieImage = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-
         }
         catch (IOException e) {
-            e.printStackTrace();
-            e.getMessage();
+            //do nothing. just get a null image.
         }
     }
 
@@ -79,4 +79,5 @@ public class MovieAttributes {
         imageView.setImageBitmap(movieImage);
         return imageView;
     }
+
 }

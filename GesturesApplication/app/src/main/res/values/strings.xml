@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GesturesApplication</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="keons_text">Keon</string>
+</resources>
