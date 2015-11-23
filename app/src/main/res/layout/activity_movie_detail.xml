@@ -9,7 +9,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=""
         android:id="@+id/textView2"
-        android:layout_gravity="left|top" />
+        android:layout_gravity="center|top" />
 
     <TextView
         android:layout_width="wrap_content"

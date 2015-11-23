@@ -10,13 +10,26 @@
 --Genre Screen--
     <string name="title_activity_genre">Genre</string>
     <string name="genre_title">Select Genre</string>
-    <string name="action_button_title">Action</string>
-    <string name="comedy_button_title">Comedy</string>
-    <string name="western_button_title">Western</string>
-
---SubGenre Screen (SubGenre uses Genre's buttons)--
-    <string name="title_activity_sub_genre">SubGenre</string>
-    <string name="sub_genre_title">Select Subgenre</string>
+    <string name="action_title">Action</string>
+    <string name="adventure_title">Adventure</string>
+    <string name="animation_title">Animation</string>
+    <string name="comedy_title">Comedy</string>
+    <string name="crime_title">Crime</string>
+    <string name="documentary_title">Documentary</string>
+    <string name="drama_title">Drama</string>
+    <string name="family_title">Family</string>
+    <string name="fantasy_title">Fantasy</string>
+    <string name="foreign_title">Foreign</string>
+    <string name="history_title">History</string>
+    <string name="horror_title">Horror</string>
+    <string name="music_title">Music</string>
+    <string name="mystery_title">Mystery</string>
+    <string name="romance_title">Romance</string>
+    <string name="scifi_title">Science Fiction</string>
+    <string name="tv_movie_title">TV Movie</string>
+    <string name="thriller_title">Thriller</string>
+    <string name="war_title">War</string>
+    <string name="western_title">Western</string>
 
 --Era Screen--
     <string name="title_activity_era">Select Era</string>

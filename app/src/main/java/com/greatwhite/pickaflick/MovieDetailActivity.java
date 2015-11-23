@@ -29,9 +29,6 @@ public class MovieDetailActivity extends ActionBarActivity {
         TextView myTextView = (TextView) findViewById(R.id.textView2);
         myTextView.setText("The genre is " + bundle.getString("genre"));
 
-        TextView myTextView1 = (TextView) findViewById(R.id.textView3);
-        myTextView1.setText("The subgenre is " + bundle.getString("subgenre"));
-
         TextView myTextView2 = (TextView) findViewById(R.id.textView4);
         myTextView2.setText("The era is " + bundle.getString("era"));
 

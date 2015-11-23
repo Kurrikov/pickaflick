@@ -22,31 +22,6 @@
         android:textColor="#eb000000"
         android:textSize="@dimen/abc_text_size_display_1_material" />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/action_button_title"
-        android:id="@+id/button3"
-        android:layout_marginTop="45dp"
-        android:background="#b4ff0000"
-        android:layout_margin="5dp" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/comedy_button_title"
-        android:id="@+id/button4"
-        android:background="#b4ff0000"
-        android:layout_margin="5dp" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/western_button_title"
-        android:id="@+id/button5"
-        android:background="#b4ff0000"
-        android:layout_margin="5dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,33 +33,95 @@
             android:orientation="vertical"
             android:layout_weight="1">
 
-            <Button
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/action_title"
+                android:id="@+id/action_check"
+                android:layout_marginTop="45dp"
+                android:layout_margin="5dp" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/animation_title"
+                android:id="@+id/animation_check"
+                android:layout_margin="5dp" />
+
+            <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Comedy"
-                android:id="@+id/button6"
-                android:background="#b4ff0000"
+                android:text="@string/crime_title"
+                android:id="@+id/crime_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/drama_title"
+                android:id="@+id/drama_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fantasy_title"
+                android:id="@+id/fantasy_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/history_title"
+                android:id="@+id/history_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/music_title"
+                android:id="@+id/music_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/romance_title"
+                android:id="@+id/romance_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_movie_title"
+                android:id="@+id/tv_movie_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/war_title"
+                android:id="@+id/war_check"
                 android:layout_margin="5dp"
                 android:layout_gravity="center_horizontal" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Crime"
-                android:id="@+id/button7"
-                android:background="#b4ff0000"
-                android:layout_margin="5dp"
-                android:layout_gravity="center_horizontal" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Documentary"
-                android:id="@+id/button8"
-                android:background="#b4ff0000"
-                android:layout_margin="5dp"
-                android:layout_gravity="center_horizontal" />
-
+                android:text="Select All"
+                android:id="@+id/all_button"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -93,37 +130,109 @@
             android:orientation="vertical"
             android:layout_weight="1">
 
-            <Button
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/adventure_title"
+                android:id="@+id/adventure_check"
+                android:layout_margin="5dp" />
+
+            <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Drama"
-                android:id="@+id/button9"
-                android:background="#b4ff0000"
+                android:text="@string/comedy_title"
+                android:id="@+id/comedy_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/documentary_title"
+                android:id="@+id/documentary_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/family_title"
+                android:id="@+id/family_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/foreign_title"
+                android:id="@+id/foreign_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/horror_title"
+                android:id="@+id/horror_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mystery_title"
+                android:id="@+id/mystery_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/scifi_title"
+                android:id="@+id/scifi_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/thriller_title"
+                android:id="@+id/thriller_check"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/western_title"
+                android:id="@+id/western_check"
+
                 android:layout_margin="5dp"
                 android:layout_gravity="center_horizontal" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Family"
-                android:id="@+id/button10"
-                android:background="#b4ff0000"
-                android:layout_margin="5dp"
-                android:layout_gravity="center_horizontal" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Fantasy"
-                android:id="@+id/button11"
-                android:background="#b4ff0000"
-                android:layout_margin="5dp"
-                android:layout_gravity="center_horizontal" />
-
+                android:text="Select None"
+                android:id="@+id/none_button"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal"
+                />
         </LinearLayout>
 
     </LinearLayout>
 
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:id="@+id/continue_button"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        />
 
 </LinearLayout>

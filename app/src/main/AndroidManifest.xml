@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.greatwhite.pickaflick" >
+    package="com.greatwhite.pickaflick">
 
     <application
         android:allowBackup="true"
@@ -22,10 +22,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.greatwhite.pickaflick.Genre" />
-        </activity>
-        <activity
-            android:name=".SubGenre"
-            android:label="@string/title_activity_sub_genre" >
         </activity>
         <activity
             android:name=".Era"

@@ -22,7 +22,7 @@ public class Era extends ActionBarActivity {
         final Bundle bundle = getIntent().getExtras();
 
         TextView myTextView = (TextView) findViewById(R.id.textView5);
-        myTextView.setText("The subgenre is " + bundle.getString("subgenre"));
+        myTextView.setText("The genre is " + bundle.getString("genre"));
 
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
