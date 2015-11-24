@@ -2,11 +2,81 @@
 <items version="2" >
 
     <item
-        jar="/home/kurrikov/Documents/KU 2015 Fall/EECS 448/pickaflick/app/build/intermediates/exploded-aar/com.github.channguyen/range-slider-view/v.1.0.1/jars/classes.jar"
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.3.2\90a3822c38ec8c996e84c16a3477ef632cbc87a3\commons-lang3-3.3.2.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="fe71ef926cc9465c8abf487a085bde70fdb4fc83">
-        <dex dex="/home/kurrikov/Documents/KU 2015 Fall/EECS 448/pickaflick/app/build/intermediates/pre-dexed/debug/classes-d3cc7f7b67ea48462f571bdd474e5ea0332fd358.jar" />
+        sha1="90a3822c38ec8c996e84c16a3477ef632cbc87a3">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\commons-lang3-3.3.2-101c5d7dbec30dba2331fe0ebe26b7e0b550aab7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.4\b1b6ea3b7e4aa4f492509a4952029cd8e48019ad\commons-io-2.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\commons-io-2.4-f391cc7adad161b5e40e2ba84c2efc2190f67792.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.10\4b95f4897fa13f2cd904aee711aeafc0c5295cd8\commons-codec-1.10.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4b95f4897fa13f2cd904aee711aeafc0c5295cd8">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\commons-codec-1.10-483e4e27dca081b8a6ecb286483f11c3d3a2473f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\18.0\cce0823396aa693798f8882e64213b1772032b09\guava-18.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="cce0823396aa693798f8882e64213b1772032b09">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\guava-18.0-159e6d483cf552c1dff65cde519ef4a6af3d7d1b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.7\2b8019b6249bb05d81d3a3094e468753e2b21311\slf4j-api-1.7.7.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="2b8019b6249bb05d81d3a3094e468753e2b21311">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\slf4j-api-1.7.7-16ee84bef3f2d7c9278aa9af2bd74283ba0591b6.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\info.movito\themoviedbapi\1.1\f0d7f1b1f78fc422bf50c4c6868b72a4f0ca7abc\themoviedbapi-1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f0d7f1b1f78fc422bf50c4c6868b72a4f0ca7abc">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\themoviedbapi-1.1-745cd0b92208dfcbb178716d47f54d139d530df1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.4.4\c5cd3347c0a86d0dcfbf3da593d8431d5a789d54\jackson-core-2.4.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c5cd3347c0a86d0dcfbf3da593d8431d5a789d54">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\jackson-core-2.4.4-2da5b2022b317e9712649bfe4b51f3c6c81c1b03.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.4.4\d3dad1a494f94579fca4b6a1142fb15fb68f0b2f\jackson-annotations-2.4.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d3dad1a494f94579fca4b6a1142fb15fb68f0b2f">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.4.4-b216a221b0c69ecaca3e9714c2892511255e1f8e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\org.slf4j\jcl-over-slf4j\1.7.7\56003dcd0a31deea6391b9e2ef2f2dc90b205a92\jcl-over-slf4j-1.7.7.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="56003dcd0a31deea6391b9e2ef2f2dc90b205a92">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\jcl-over-slf4j-1.7.7-33d9fa8392456e005a2d9accefe01ddb169d1d37.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\org.apache.directory.studio\org.apache.commons.io\2.4\b98d592c582262b3da8a871c7317f4902d98e996\org.apache.commons.io-2.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b98d592c582262b3da8a871c7317f4902d98e996">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\org.apache.commons.io-2.4-0d62d2ce64d21d34237f6819c712b3d9a5e1c481.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.4.4\e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee\jackson-databind-2.4.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\jackson-databind-2.4.4-cf8b317e02490489b492ec20010cdb360f858038.jar" />
     </item>
 
 </items>

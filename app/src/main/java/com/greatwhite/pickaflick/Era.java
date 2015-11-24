@@ -28,7 +28,7 @@ public class Era extends ActionBarActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //add to bundle and continue passing bundle to next activity
-                bundle.putString("era", "2010's");
+                bundle.putString("era", "2010");
                 intent.putExtras(bundle);
 
                 startActivity(intent);
@@ -38,7 +38,7 @@ public class Era extends ActionBarActivity {
         Button button3 = (Button) findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                bundle.putString("era", "2000's");
+                bundle.putString("era", "2000");
                 intent.putExtras(bundle);
 
                 startActivity(intent);
@@ -48,7 +48,7 @@ public class Era extends ActionBarActivity {
         Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                bundle.putString("era", "1990's");
+                bundle.putString("era", "1990");
                 intent.putExtras(bundle);
 
                 startActivity(intent);
@@ -58,7 +58,7 @@ public class Era extends ActionBarActivity {
         Button button5 = (Button) findViewById(R.id.button5);
         button5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                bundle.putString("era", "1980's");
+                bundle.putString("era", "1980");
                 intent.putExtras(bundle);
 
                 startActivity(intent);
@@ -68,7 +68,7 @@ public class Era extends ActionBarActivity {
         Button button4 = (Button) findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                bundle.putString("era", "1970's");
+                bundle.putString("era", "1970");
                 intent.putExtras(bundle);
 
                 startActivity(intent);
