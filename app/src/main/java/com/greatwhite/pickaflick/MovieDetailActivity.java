@@ -90,11 +90,14 @@ public class MovieDetailActivity extends AppCompatActivity {
     protected void temporaryMovieDisplayer(TextView textView, List<MovieAttributes> movieList){
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
                                                                             // You may change its size by passing in two additional int parameters
-        String s = "No Movies To display";
+        String s = "";
         if(movieList != null && movieList.size() != 0){
             imageView = movieList.get(0).getImageView(imageView, 400, 400);    //this is how you can get the movie poster (in this case, for the 0th movie in the list).
             for(int i = 0; i < movieList.size(); i++)
                 s = s + movieList.get(i).getTitle() + " (" + movieList.get(i).getReleaseDate().substring(0,4) + ")\n"; //print the title and release dates of the movies
+        }
+        else{
+            s = "No movies to display";
         }
         textView.setText(s);
     }
