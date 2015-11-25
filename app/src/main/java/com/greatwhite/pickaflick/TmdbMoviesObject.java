@@ -48,8 +48,8 @@ public class TmdbMoviesObject extends TmdbObject {
             else i++;
         }
 
-        //Sort by votecount and popularity (descending order)
-        Collections.sort(movieDbs, new Comparator<MovieDb>() {      //in order to sort this list, we need a comparator that can compare the compare the ratings and vote counts together.
+        //Sort by vote count and rating (descending order)
+        Collections.sort(movieDbs, new Comparator<MovieDb>() {      //in order to sort this list, we need a comparator that can compare the ratings and vote counts to each other.
                                                                     // (There is way more than one way to do this.)
             @Override
             public int compare(MovieDb movieDb1, MovieDb movieDb2) {
