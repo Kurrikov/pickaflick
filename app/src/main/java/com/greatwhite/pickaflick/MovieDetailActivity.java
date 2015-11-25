@@ -89,10 +89,10 @@ public class MovieDetailActivity extends AppCompatActivity {
     //a quick method to show some of the features of the movieAttributes Class
     protected void temporaryMovieDisplayer(TextView textView, List<MovieAttributes> movieList){
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
-        imageView = movieList.get(0).getImageView(imageView, 400, 400);    //this is how you can get the movie poster (in this case, for the 0th movie in the list).
                                                                             // You may change its size by passing in two additional int parameters
-        String s = "";
+        String s = "No Movies To display";
         if(movieList != null && movieList.size() != 0){
+            imageView = movieList.get(0).getImageView(imageView, 400, 400);    //this is how you can get the movie poster (in this case, for the 0th movie in the list).
             for(int i = 0; i < movieList.size(); i++)
                 s = s + movieList.get(i).getTitle() + " (" + movieList.get(i).getReleaseDate().substring(0,4) + ")\n"; //print the title and release dates of the movies
         }
@@ -118,8 +118,7 @@ public class MovieDetailActivity extends AppCompatActivity {
 
     protected List<MovieAttributes> fetchMoviesList(String mpaa_Ratings, String genre, String era, String minRating) throws TmdbRunnable.NoInternetConnectionException, InterruptedException{
         final String API_ID = "d2148dac5e85b1dee3f0fe5e2c3a83ab";
-        TmdbMoviesObject tmdbMoviesobject = null; //the "main container" of all movie-related items
-        tmdbMoviesobject = new TmdbMoviesObject(mpaa_Ratings, genre, era, minRating);
+        TmdbMoviesObject tmdbMoviesobject = new TmdbMoviesObject(mpaa_Ratings, genre, era, minRating);
         Thread thread = new Thread(new TmdbRunnable(tmdbMoviesobject, API_ID)); //all the network calls for image retrieval and movie list retrieval will be done on this thread
         thread.start();
         thread.join();

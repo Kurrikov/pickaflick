@@ -17,22 +17,22 @@ public class TmdbObject {
     }
 
     private void setDiscoverProperties(String MPAA_Rating, String GenreList,  int decade, float minRating){
-        discover = new Discover(); //The Genre doesn't exist.//this is where we set our filtering criteria (not calling from database here)
+        discover = new Discover(); //this is where we set our filtering criteria (not calling from database here)
         discover.page(NumberOfPages)
                 .language("en")
+                .sortBy("popularity.desc")      //sorts the list by popularity only (descending).
                 .withGenres(GenreList)
                 .voteAverageGte(minRating)
-                .sortBy("popularity.desc")
-                .certificationCountry("US")
-                .certificationLte(MPAA_Rating)
                 .releaseDateGte(String.valueOf(decade) + "-01-01")
-                .releaseDateLte(String.valueOf(decade + 9) + "-12-31");
+                .releaseDateLte(String.valueOf(decade + 9) + "-12-31")
+                .certificationCountry("US")
+                .certificationLte(MPAA_Rating);
     }
     public Discover getDiscover(){
         return this.discover;
     }
 
-    /*
+    /*  //Use as reference
     private void setHashMap(){
         map = new HashMap<String,String>();
         map.put("","");
