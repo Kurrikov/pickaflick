@@ -6,7 +6,7 @@ import info.movito.themoviedbapi.model.Discover;
  */
 public class TmdbObject {
 
-    private int NumberOfPages = 1;
+    private int NumberOfPages = 5;      //retrieves a total of at most 100 movies to begin with. Will eventually narrow down the list to 10.
     protected int era;
     private Discover discover;
     //private Map<String,String> map;

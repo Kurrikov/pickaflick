@@ -20,18 +20,31 @@ public class MovieAttributes {
     private String overview;
     private String imageURL;
     private int runtime;
+    private int voteCount;
     private float ratings;
     private String releaseDate;
+    private String tmdbpageURL;
     private Bitmap movieImage;
 
     public MovieAttributes(MovieDb movie){
         title = movie.getTitle();
         overview = movie.getOverview();
         imageURL = "http://image.tmdb.org/t/p/w500" + movie.getPosterPath();
+        tmdbpageURL = "https://www.themoviedb.org/movie/" + String.valueOf(movie.getId()) + "-" + titleParser() + "?language=en";
         runtime = movie.getRuntime();
         ratings = movie.getVoteAverage();
         releaseDate = movie.getReleaseDate();
+        voteCount = movie.getVoteCount();
         setImage();
+    }
+
+    private String titleParser(){
+        String URLtitle = "";
+        for(int i = 0 ; i < title.length() ; i++){
+            if(i < title.length() - 1 && title.substring(i,i+1).equals(" ")) URLtitle = URLtitle + "-";
+            else URLtitle = URLtitle + title.charAt(i);
+        }
+        return URLtitle;
     }
 
     public String getTitle(){
@@ -46,12 +59,24 @@ public class MovieAttributes {
         return imageURL;
     }
 
+    public String getTmdbPageURL(){
+        return tmdbpageURL;
+    }
+
     public float getRatings() {
         return ratings;
     }
 
     public String getReleaseDate(){
         return releaseDate;
+    }
+
+    public int getVoteCount(){
+        return voteCount;
+    }
+
+    public int runTime(){
+        return runtime;
     }
 
     public Bitmap getImage(){

@@ -92,9 +92,9 @@ public class MovieDetailActivity extends AppCompatActivity {
                                                                             // You may change its size by passing in two additional int parameters
         String s = "";
         if(movieList != null && movieList.size() != 0){
-            imageView = movieList.get(0).getImageView(imageView, 400, 400);    //this is how you can get the movie poster (in this case, for the 0th movie in the list).
+            imageView = movieList.get(0).getImageView(imageView, 200, 200);    //this is how you can get the movie poster (in this case, for the 0th movie in the list).
             for(int i = 0; i < movieList.size(); i++)
-                s = s + movieList.get(i).getTitle() + " (" + movieList.get(i).getReleaseDate().substring(0,4) + ")\n"; //print the title and release dates of the movies
+                s = s + movieList.get(i).getTitle() + " (" + movieList.get(i).getReleaseDate().substring(0,4) + ") ; Rating: "  + movieList.get(i).getRatings() + "/10 ; " + "VC: " + movieList.get(i).getVoteCount() + "\n"; //print the title and release dates of the movies
         }
         else{
             s = "No movies to display";
@@ -119,6 +119,16 @@ public class MovieDetailActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     *  THIS IS THE METHOD THAT YOU MUST USE, after you have gotten all of your filters. You must make sure to use try-catch blocks for the exceptions. The only serious exception that will require actual handling is the no-Internet exception. In the test-method I have demonstrated its usage
+     * @param mpaa_Ratings: A String from the following list: E,G,PG,M,MA15+,R18+,X18+,RC,14A,18A,R,A,NR,PG-13,NC-17 ... . NOTE: The MPAA rating will return movies with that rating AND lower. So if the filter is R, you will also get movies that are PG, E, etc. See http://docs.themoviedb.apiary.io/#reference/certifications/certificationmovielist/get for the details and full list.
+     * @param genre: A String from the following list: Adventure, Animation, Comedy, Crime, Documentary, Drama, Family, Fantasy, Foreign, History, Horror, Music, Mystery, Romance, Science Fiction, TV Movie, Thriller, War, Western. The same string cannot be used twice or more.
+     * @param era: A 4 digit integer indicating the decade at which the movie(s) was/were released. Ranges from 1900 to 2090. For example, movies from the 2000s will need the integer 2000. Movies from the 1980s will need the integer 1980, and so on. (Don't try years that don't end with a 0)
+     * @param minRating: A float from 0.0 to 10.0. This will be the minimum rating in the list of movies that you get. So if it is 8.0, you will get movies whose ratings range from 8 to 10.
+     * @return A list containing movie attributes of all filtered movies. See the MovieAttribute.java class for details.
+     * @throws TmdbRunnable.NoInternetConnectionException: If there is no internet or very slow internet. See TmdbRunnable's hostIsReachable() method. You probably just want to display the message from the exception in the catch block. See the test-method below.
+     * @throws InterruptedException: if the image(s) fail to download. No particular handling should be needed for this. Just use an empty catch block.
+     */
     protected List<MovieAttributes> fetchMoviesList(String mpaa_Ratings, String genre, String era, String minRating) throws TmdbRunnable.NoInternetConnectionException, InterruptedException{
         final String API_ID = "d2148dac5e85b1dee3f0fe5e2c3a83ab";
         TmdbMoviesObject tmdbMoviesobject = new TmdbMoviesObject(mpaa_Ratings, genre, era, minRating);
