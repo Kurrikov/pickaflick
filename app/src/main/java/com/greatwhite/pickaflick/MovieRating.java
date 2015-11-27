@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.greatwhite.pickaflick.dummy.DummyContent;
@@ -45,6 +46,10 @@ public class MovieRating extends AppCompatActivity {
     }
 
     private void onButtonClick(String rating) {
+        //Start loading indicator
+        ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
+        bar.setVisibility(View.VISIBLE);
+
         final Intent intent = new Intent(MovieRating.this, MovieListActivity.class);
 
         final Bundle bundle = getIntent().getExtras();
@@ -52,7 +57,6 @@ public class MovieRating extends AppCompatActivity {
 
         bundle.putString("movierating", rating);
 
-        //Start loading indicator
 
         //Retrieve movie list and store in bundle
         List<MovieAttributes> movieList = null;
@@ -76,7 +80,7 @@ public class MovieRating extends AppCompatActivity {
 //            ErrorMessage = e.getMessage();
         }
         //Turn off loading indicator
-
+        bar.setVisibility(View.INVISIBLE);
         startActivity(intent);
     }
 
@@ -85,7 +89,8 @@ public class MovieRating extends AppCompatActivity {
         TmdbMoviesObject tmdbMoviesobject = new TmdbMoviesObject(mpaa_Ratings, genre, era, minRating);
         Thread thread = new Thread(new TmdbRunnable(tmdbMoviesobject, API_ID)); //all the network calls for image retrieval and movie list retrieval will be done on this thread
         thread.start();
-        thread.join();
+        thread.join(100);
+
         if(tmdbMoviesobject.getMoviesList()== null){
             throw new TmdbRunnable.NoInternetConnectionException();
         }

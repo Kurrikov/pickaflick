@@ -54,9 +54,10 @@ public class MovieListActivity extends FragmentActivity
         ArrayList<String> movieTitles = bundle.getStringArrayList("movieTitles");
         ArrayList<String> movieUrls = bundle.getStringArrayList("movieUrls");
         int i = 0;
-        for(String title : movieTitles)
-        {
-            DummyContent.addItem(new DummyContent.DummyItem(String.valueOf(i), title, movieUrls.get(i++)));
+        if (movieTitles != null) {
+            for (String title : movieTitles) {
+                DummyContent.addItem(new DummyContent.DummyItem(String.valueOf(i), title, movieUrls.get(i++)));
+            }
         }
 
         if(!ErrorMessage.equals("")) myTextView2.setText(ErrorMessage);     //display the error
