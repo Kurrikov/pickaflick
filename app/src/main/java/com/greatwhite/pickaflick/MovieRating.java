@@ -18,7 +18,7 @@ public class MovieRating extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_rating);
 
-        final Intent intent = new Intent(MovieRating.this, MovieListActivity.class);
+        final Intent intent = new Intent(MovieRating.this, MovieDetailActivity.class);
 
         final Bundle bundle = getIntent().getExtras();
 

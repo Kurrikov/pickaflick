@@ -5,8 +5,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 
@@ -43,7 +41,8 @@ public class MovieDetailFragment extends Fragment {
 
         if (getArguments().containsKey(ARG_ITEM_ID)) {
             // Load the dummy content specified by the fragment
-            // arguments.
+            // arguments. In a real-world scenario, use a Loader
+            // to load content from a content provider.
             mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
         }
     }
@@ -53,13 +52,11 @@ public class MovieDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_movie_detail, container, false);
 
-        // Show the dummy content as text in a WebView.
+        // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((WebView) rootView.findViewById(R.id.detail_area)).loadUrl(mItem.url);
+            ((TextView) rootView.findViewById(R.id.movie_detail)).setText(mItem.content);
         }
 
         return rootView;
     }
 }
-
-
