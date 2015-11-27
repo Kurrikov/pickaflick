@@ -9,13 +9,14 @@ import java.math.*;
 
 /**
  * Created by Keon on 11/8/2015.
+ * Modified by Jason on 2015-11-27 -- Added handling for low and high limits for era
  */
 public class TmdbMoviesObject extends TmdbObject {
 
     private List<MovieAttributes> moviesList;
 
-    public TmdbMoviesObject(String MPAA_Rating, String genre, String era, String minRating){
-        super(MPAA_Rating, genre, era, minRating);
+    public TmdbMoviesObject(String MPAA_Rating, String genre, String era_low, String era_high, String minRating){
+        super(MPAA_Rating, genre, era_low, era_high, minRating);
     }
 
     public void setMoviesList(List<MovieDb> movieDbs){
@@ -44,7 +45,7 @@ public class TmdbMoviesObject extends TmdbObject {
         //remove "out of date" movies
         for (int i = 0; i < movieDbs.size(); ) {
             int releaseYear = Integer.parseInt(movieDbs.get(i).getReleaseDate().substring(0, 4));
-            if ((releaseYear > era + 9 || releaseYear < era)) movieDbs.remove(i);
+            if ((releaseYear > era_high || releaseYear < era_low)) movieDbs.remove(i);
             else i++;
         }
 

@@ -21,8 +21,9 @@ public class MpaaRatings extends AppCompatActivity {
 
         final Bundle bundle = getIntent().getExtras();
 
+        // For debugging
         TextView myTextView = (TextView) findViewById(R.id.textView6);
-        myTextView.setText("The era is " + bundle.getString("era"));
+        myTextView.setText("The era_low is " + bundle.getString("era_low") + "\n The era_high is " + bundle.getString("era_high"));
 
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
