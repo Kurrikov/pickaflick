@@ -51,13 +51,21 @@ public class MovieListActivity extends FragmentActivity
         String ErrorMessage = "";  //if for whatever reason the fetchMoviesList() method fails, this message will contain the error information.
 
 
-        ArrayList<String> movieTitles = bundle.getStringArrayList("movieTitles");
-        ArrayList<String> movieUrls = bundle.getStringArrayList("movieUrls");
+        ArrayList<String> movieTitles;
+        ArrayList<String> movieUrls;
         int i = 0;
-        if (movieTitles != null) {
-            for (String title : movieTitles) {
-                DummyContent.addItem(new DummyContent.DummyItem(String.valueOf(i), title, movieUrls.get(i++)));
+        if (bundle != null) {
+            movieTitles = bundle.getStringArrayList("movieTitles");
+            movieUrls = bundle.getStringArrayList("movieUrls");
+            if (movieTitles != null) {
+                for (String title : movieTitles) {
+                    DummyContent.addItem(new DummyContent.DummyItem(String.valueOf(i), title, movieUrls.get(i++)));
+                }
             }
+        }
+
+        if (i == 0) {
+            DummyContent.addItem(new DummyContent.DummyItem(String.valueOf(999), "No Movies Found", ""));
         }
 
         if(!ErrorMessage.equals("")) myTextView2.setText(ErrorMessage);     //display the error
