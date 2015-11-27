@@ -55,7 +55,14 @@ public class MovieDetailFragment extends Fragment {
 
         // Show the dummy content as text in a WebView.
         if (mItem != null) {
-            ((WebView) rootView.findViewById(R.id.detail_area)).loadUrl(mItem.url);
+            WebView wv = (WebView) rootView.findViewById(R.id.detail_area);
+            wv.setWebViewClient(new WebViewClient() {
+                public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                    view.loadUrl(url);
+                    return true;
+                }});
+
+            wv.loadUrl(mItem.url);
         }
 
         return rootView;
