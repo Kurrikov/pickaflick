@@ -25,12 +25,15 @@ public class DummyContent {
 
     static {
         // Add 3 sample items.
-        addItem(new DummyItem("1", "Item 1"));
-        addItem(new DummyItem("2", "Item 2"));
-        addItem(new DummyItem("3", "Item 3"));
+//        addItem(new DummyItem("1", "Kangaroo Jack", "http://www.imdb.com/title/tt0257568/?ref_=fn_al_tt_1"));
+//        addItem(new DummyItem("2", "Nexium", "http://www.drugs.com/nexium.html"));
+//        addItem(new DummyItem("3", "Plavix", "http://www.drugs.com/plavix.html"));
+
+        //code to add movies to the list
+
     }
 
-    private static void addItem(DummyItem item) {
+    public static void addItem(DummyItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);
     }
@@ -40,16 +43,18 @@ public class DummyContent {
      */
     public static class DummyItem {
         public String id;
-        public String content;
+        public String movieTitle;
+        public String url;
 
-        public DummyItem(String id, String content) {
+        public DummyItem(String id, String movieTitle, String url) {
             this.id = id;
-            this.content = content;
+            this.movieTitle = movieTitle;
+            this.url = url;
         }
 
         @Override
         public String toString() {
-            return content;
+            return movieTitle;
         }
     }
 }
