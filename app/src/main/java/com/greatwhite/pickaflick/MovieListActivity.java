@@ -49,21 +49,15 @@ public class MovieListActivity extends FragmentActivity
         TextView myTextView2 = (TextView) findViewById(R.id.textView4);
 
         String ErrorMessage = "";  //if for whatever reason the fetchMoviesList() method fails, this message will contain the error information.
-        List<MovieAttributes> movieList = null;
 
-        try {
-            movieList = fetchMoviesList(bundle.getString("mpaaratings"), bundle.getString("genre"), bundle.getString("era"), bundle.getString("movierating"));
-            int i = 0;
-            for(MovieAttributes item : movieList)
-            {
-                DummyContent.addItem(new DummyContent.DummyItem(String.valueOf(i++), item.getTitle(), item.getTmdbPageURL()));
-            }
-        } catch (TmdbRunnable.NoInternetConnectionException e) {
-            ErrorMessage = e.getMessage();
-        } catch (InterruptedException e) {      //this will happen only if the network thread is interrupted for some reason.
-            ErrorMessage = e.getMessage();
+
+        ArrayList<String> movieTitles = bundle.getStringArrayList("movieTitles");
+        ArrayList<String> movieUrls = bundle.getStringArrayList("movieUrls");
+        int i = 0;
+        for(String title : movieTitles)
+        {
+            DummyContent.addItem(new DummyContent.DummyItem(String.valueOf(i), title, movieUrls.get(i++)));
         }
-
 
         if(!ErrorMessage.equals("")) myTextView2.setText(ErrorMessage);     //display the error
 

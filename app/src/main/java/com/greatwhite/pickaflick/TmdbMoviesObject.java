@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import info.movito.themoviedbapi.model.MovieDb;
-import java.math.*;
+
 
 /**
  * Created by Keon on 11/8/2015.

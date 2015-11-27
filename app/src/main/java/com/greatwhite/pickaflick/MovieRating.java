@@ -10,6 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.greatwhite.pickaflick.dummy.DummyContent;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MovieRating extends AppCompatActivity {
 
@@ -18,43 +23,73 @@ public class MovieRating extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_rating);
 
-        final Intent intent = new Intent(MovieRating.this, MovieListActivity.class);
-
-        final Bundle bundle = getIntent().getExtras();
-
-        TextView myTextView = (TextView) findViewById(R.id.textView7);
-        myTextView.setText("The mpaarating is " + bundle.getString("mpaaratings"));
-
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //add to bundle and continue passing bundle to next activity
-                bundle.putString("movierating", "9.0");
-                intent.putExtras(bundle);
-
-                startActivity(intent);
+                onButtonClick("9.0");
             }
         });
 
         Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                bundle.putString("movierating", "7.5");
-                intent.putExtras(bundle);
-
-                startActivity(intent);
-            }
+                onButtonClick("7.5");           }
         });
 
         Button button3 = (Button) findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                bundle.putString("movierating", "6.0");
-                intent.putExtras(bundle);
-
-                startActivity(intent);
+                onButtonClick("5.0");
             }
         });
+    }
+
+    private void onButtonClick(String rating) {
+        final Intent intent = new Intent(MovieRating.this, MovieListActivity.class);
+
+        final Bundle bundle = getIntent().getExtras();
+
+
+        bundle.putString("movierating", rating);
+
+        //Start loading indicator
+
+        //Retrieve movie list and store in bundle
+        List<MovieAttributes> movieList = null;
+        ArrayList<String> movieTitles = new ArrayList();
+        ArrayList<String> movieUrls = new ArrayList();
+
+
+        try {
+            movieList = fetchMoviesList(bundle.getString("mpaaratings"), bundle.getString("genre"), bundle.getString("era"), bundle.getString("movierating"));
+            for(MovieAttributes item : movieList)
+            {
+                movieTitles.add(item.getTitle());
+                movieUrls.add(item.getTmdbPageURL());
+            }
+            bundle.putStringArrayList("movieTitles", movieTitles);
+            bundle.putStringArrayList("movieUrls", movieUrls);
+            intent.putExtras(bundle);
+       } catch (TmdbRunnable.NoInternetConnectionException e) {
+//            ErrorMessage = e.getMessage();
+        } catch (InterruptedException e) {      //this will happen only if the network thread is interrupted for some reason.
+//            ErrorMessage = e.getMessage();
+        }
+        //Turn off loading indicator
+
+        startActivity(intent);
+    }
+
+    protected List<MovieAttributes> fetchMoviesList(String mpaa_Ratings, String genre, String era, String minRating) throws TmdbRunnable.NoInternetConnectionException, InterruptedException{
+        final String API_ID = "d2148dac5e85b1dee3f0fe5e2c3a83ab";
+        TmdbMoviesObject tmdbMoviesobject = new TmdbMoviesObject(mpaa_Ratings, genre, era, minRating);
+        Thread thread = new Thread(new TmdbRunnable(tmdbMoviesobject, API_ID)); //all the network calls for image retrieval and movie list retrieval will be done on this thread
+        thread.start();
+        thread.join();
+        if(tmdbMoviesobject.getMoviesList()== null){
+            throw new TmdbRunnable.NoInternetConnectionException();
+        }
+        else return tmdbMoviesobject.getMoviesList();
     }
 
     @Override
