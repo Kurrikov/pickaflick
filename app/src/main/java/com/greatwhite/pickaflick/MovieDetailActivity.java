@@ -28,23 +28,6 @@ public class MovieDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
 
-        Bundle bundle = getIntent().getExtras();
-
-
-
-        TextView myTextView2 = (TextView) findViewById(R.id.textView4);
-        //myTextView2.setText("The era is " + bundle.getString("era"));
-        /*
-        TextView myTextView = (TextView) findViewById(R.id.textView2);
-        myTextView.setText("The genre is " + bundle.getString("genre"));
-
-        TextView myTextView3 = (TextView) findViewById(R.id.textView5);
-        myTextView3.setText("The mpaaratings is " + bundle.getString("mpaaratings"));
-
-        TextView myTextView4 = (TextView) findViewById(R.id.textView6);
-        myTextView4.setText("The movierating is " + bundle.getString("movierating"));
-        */
-
         // Show the Up button in the action bar.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -69,22 +52,6 @@ public class MovieDetailActivity extends AppCompatActivity {
                     .add(R.id.movie_detail_container, fragment)
                     .commit();
         }
-    }
-
-    //a quick method to show some of the features of the movieAttributes Class
-    protected void temporaryMovieDisplayer(TextView textView, List<MovieAttributes> movieList){
-        ImageView imageView = (ImageView) findViewById(R.id.imageView);
-                                                                            // You may change its size by passing in two additional int parameters
-        String s = "";
-        if(movieList != null && movieList.size() != 0){
-            imageView = movieList.get(0).getImageView(imageView, 200, 200);    //this is how you can get the movie poster (in this case, for the 0th movie in the list).
-            for(int i = 0; i < movieList.size(); i++)
-                s = s + movieList.get(i).getTitle() + " (" + movieList.get(i).getReleaseDate().substring(0,4) + ") ; Rating: "  + movieList.get(i).getRatings() + "/10 ; " + "VC: " + movieList.get(i).getVoteCount() + "\n"; //print the title and release dates of the movies
-        }
-        else{
-            s = "No movies to display";
-        }
-        textView.setText(s);
     }
 
     @Override

@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.List;
 import info.movito.themoviedbapi.model.MovieDb;
 
-
 /**
  * Created by Keon on 11/8/2015.
  */
@@ -21,7 +20,7 @@ public class TmdbMoviesObject extends TmdbObject {
     public void setMoviesList(List<MovieDb> movieDbs){
         if(movieDbs != null){
             moviesList = new ArrayList<MovieAttributes>();
-            int minSize = minimum(movieDbs.size(),10);
+            int minSize = minimum(movieDbs.size(),25);
             for (int i = 0; i < minSize; i++) {
                 this.moviesList.add(new MovieAttributes(movieDbs.get(i)));
             }
@@ -57,7 +56,6 @@ public class TmdbMoviesObject extends TmdbObject {
             }
 
         });
-
 
         return movieDbs;
     }

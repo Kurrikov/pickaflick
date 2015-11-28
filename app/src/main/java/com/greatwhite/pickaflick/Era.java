@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
 public class Era extends ActionBarActivity {
 
     @Override
@@ -21,8 +20,8 @@ public class Era extends ActionBarActivity {
 
         final Bundle bundle = getIntent().getExtras();
 
-        TextView myTextView = (TextView) findViewById(R.id.textView5);
-        myTextView.setText("The genre is " + bundle.getString("genre"));
+//        TextView myTextView = (TextView) findViewById(R.id.textView5);
+//        myTextView.setText("The genre is " + bundle.getString("genre"));
 
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {

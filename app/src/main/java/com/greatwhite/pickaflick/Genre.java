@@ -76,7 +76,6 @@ public class Genre extends AppCompatActivity {
                 for (int i = 0; i < checkList.size(); i++) {
                     checkList.get(i).setChecked(true);
                 }
-
             }
         });
 
@@ -87,7 +86,6 @@ public class Genre extends AppCompatActivity {
                 for (int i = 0; i < checkList.size(); i++) {
                     checkList.get(i).setChecked(false);
                 }
-
             }
         });
 
@@ -172,7 +170,6 @@ public class Genre extends AppCompatActivity {
                     // Place string in bundle
                     bundle.putString("genre", genreIDs.toString());
                 }
-
 
                 intent.putExtras(bundle);
 

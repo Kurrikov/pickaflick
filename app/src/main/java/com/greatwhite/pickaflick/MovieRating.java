@@ -90,6 +90,7 @@ public class MovieRating extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //class to handle background list generation so that the UI is freed up
     private class FetchMoviesTask extends AsyncTask<URL, Integer, Long> {
         protected Long doInBackground(URL... urls) {
             bundle = getIntent().getExtras();
