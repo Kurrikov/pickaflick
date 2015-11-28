@@ -1,7 +1,7 @@
 package com.greatwhite.pickaflick;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -9,20 +9,25 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
-import com.greatwhite.pickaflick.dummy.DummyContent;
-
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class MovieRating extends AppCompatActivity {
+    ProgressBar bar = null;
+    Bundle bundle;
+    Intent intent;
+    String rating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_rating);
+
+        //Turn off loading indicator
+        bar = (ProgressBar) findViewById(R.id.progressBar);
+        bar.setVisibility(View.INVISIBLE);
 
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -47,52 +52,18 @@ public class MovieRating extends AppCompatActivity {
 
     private void onButtonClick(String rating) {
         //Start loading indicator
-        ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
         bar.setVisibility(View.VISIBLE);
-
-        final Intent intent = new Intent(MovieRating.this, MovieListActivity.class);
-
-        final Bundle bundle = getIntent().getExtras();
-
-
-        bundle.putString("movierating", rating);
-
-
-        //Retrieve movie list and store in bundle
-        List<MovieAttributes> movieList = null;
-        ArrayList<String> movieTitles = new ArrayList();
-        ArrayList<String> movieUrls = new ArrayList();
-
-
-        try {
-            movieList = fetchMoviesList(bundle.getString("mpaaratings"), bundle.getString("genre"), bundle.getString("era"), bundle.getString("movierating"));
-            for(MovieAttributes item : movieList)
-            {
-                movieTitles.add(item.getTitle());
-                movieUrls.add(item.getTmdbPageURL());
-            }
-            bundle.putStringArrayList("movieTitles", movieTitles);
-            bundle.putStringArrayList("movieUrls", movieUrls);
-            intent.putExtras(bundle);
-       } catch (TmdbRunnable.NoInternetConnectionException e) {
-//            ErrorMessage = e.getMessage();
-        } catch (InterruptedException e) {      //this will happen only if the network thread is interrupted for some reason.
-//            ErrorMessage = e.getMessage();
-        }
-        //Turn off loading indicator
-        bar.setVisibility(View.INVISIBLE);
-        startActivity(intent);
+        this.rating = rating;
+        new FetchMoviesTask().execute((URL)null);
     }
 
-    protected List<MovieAttributes> fetchMoviesList(String mpaa_Ratings, String genre, String era, String minRating) throws TmdbRunnable.NoInternetConnectionException, InterruptedException{
+    protected List<MovieAttributes> fetchMoviesList(String mpaa_Ratings, String genre, String era, String minRating) throws TmdbExecutor.NoInternetConnectionException, InterruptedException{
         final String API_ID = "d2148dac5e85b1dee3f0fe5e2c3a83ab";
         TmdbMoviesObject tmdbMoviesobject = new TmdbMoviesObject(mpaa_Ratings, genre, era, minRating);
-        Thread thread = new Thread(new TmdbRunnable(tmdbMoviesobject, API_ID)); //all the network calls for image retrieval and movie list retrieval will be done on this thread
-        thread.start();
-        thread.join(100);
+        new TmdbExecutor(tmdbMoviesobject, API_ID).execute();
 
         if(tmdbMoviesobject.getMoviesList()== null){
-            throw new TmdbRunnable.NoInternetConnectionException();
+            throw new TmdbExecutor.NoInternetConnectionException();
         }
         else return tmdbMoviesobject.getMoviesList();
     }
@@ -118,4 +89,46 @@ public class MovieRating extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    private class FetchMoviesTask extends AsyncTask<URL, Integer, Long> {
+        protected Long doInBackground(URL... urls) {
+            bundle = getIntent().getExtras();
+            intent = new Intent(MovieRating.this, MovieListActivity.class);
+
+            bundle.putString("movierating", rating);
+
+            //Retrieve movie list and store in bundle
+            List<MovieAttributes> movieList = null;
+            ArrayList<String> movieTitles = new ArrayList();
+            ArrayList<String> movieUrls = new ArrayList();
+
+            try {
+                movieList = fetchMoviesList(bundle.getString("mpaaratings"), bundle.getString("genre"), bundle.getString("era"), bundle.getString("movierating"));
+                for(MovieAttributes item : movieList)
+                {
+                    movieTitles.add(item.getTitle());
+                    movieUrls.add(item.getTmdbPageURL());
+                }
+                bundle.putStringArrayList("movieTitles", movieTitles);
+                bundle.putStringArrayList("movieUrls", movieUrls);
+                intent.putExtras(bundle);
+            } catch (TmdbExecutor.NoInternetConnectionException e) {
+//            ErrorMessage = e.getMessage();
+            } catch (InterruptedException e) {      //this will happen only if the network thread is interrupted for some reason.
+//            ErrorMessage = e.getMessage();
+            }
+
+            return 0L;
+        }
+
+        protected void onProgressUpdate(Integer... progress) {
+       }
+
+        protected void onPostExecute(Long result) {
+            bar.setVisibility(View.INVISIBLE);
+
+            startActivity(intent);
+        }
+    }
+
 }

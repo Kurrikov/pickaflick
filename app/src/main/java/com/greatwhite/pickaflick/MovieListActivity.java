@@ -3,6 +3,7 @@ package com.greatwhite.pickaflick;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import com.greatwhite.pickaflick.dummy.DummyContent;
@@ -114,18 +115,6 @@ public class MovieListActivity extends FragmentActivity
             detailIntent.putExtra(MovieDetailFragment.ARG_ITEM_ID, id);
             startActivity(detailIntent);
         }
-    }
-
-    protected List<MovieAttributes> fetchMoviesList(String mpaa_Ratings, String genre, String era, String minRating) throws TmdbRunnable.NoInternetConnectionException, InterruptedException{
-        final String API_ID = "d2148dac5e85b1dee3f0fe5e2c3a83ab";
-        TmdbMoviesObject tmdbMoviesobject = new TmdbMoviesObject(mpaa_Ratings, genre, era, minRating);
-        Thread thread = new Thread(new TmdbRunnable(tmdbMoviesobject, API_ID)); //all the network calls for image retrieval and movie list retrieval will be done on this thread
-        thread.start();
-        thread.join();
-        if(tmdbMoviesobject.getMoviesList()== null){
-            throw new TmdbRunnable.NoInternetConnectionException();
-        }
-        else return tmdbMoviesobject.getMoviesList();
     }
 
 
