@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/genre_title"
-        android:id="@+id/textView2"
+        android:id="@+id/scoreTitle"
         android:layout_marginTop="0dp"
         android:textColor="#eb000000"
         android:textSize="@dimen/abc_text_size_display_1_material" />

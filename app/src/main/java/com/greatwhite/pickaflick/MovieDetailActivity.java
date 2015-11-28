@@ -35,7 +35,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         TextView myTextView2 = (TextView) findViewById(R.id.textView4);
         //myTextView2.setText("The era is " + bundle.getString("era"));
         /*
-        TextView myTextView = (TextView) findViewById(R.id.textView2);
+        TextView myTextView = (TextView) findViewById(R.id.scoreTitle);
         myTextView.setText("The genre is " + bundle.getString("genre"));
 
         TextView myTextView3 = (TextView) findViewById(R.id.textView5);

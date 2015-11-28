@@ -26,6 +26,7 @@ public class TmdbObject {
                 .sortBy("popularity.desc")      //sorts the list by popularity only (descending).
                 .withGenres(GenreList)
                 .voteAverageGte(minRating)
+                .voteCountGte(10)               //don't return movies that only have a small number of ratings
                 .releaseDateGte(String.valueOf(era_low) + "-01-01")
                 .releaseDateLte(String.valueOf(era_high) + "-12-31")
                 .certificationCountry("US")
