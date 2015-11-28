@@ -127,6 +127,7 @@ public class MovieRating extends AppCompatActivity {
         protected void onPostExecute(Long result) {
             bar.setVisibility(View.INVISIBLE);
 
+            // Go to MovieListActivity
             startActivity(intent);
         }
     }
