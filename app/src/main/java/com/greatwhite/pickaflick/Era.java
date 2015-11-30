@@ -48,8 +48,6 @@ public class Era extends ActionBarActivity {
             }
         });
 
-
-
         // Continue button for moving to the next activity
         Button continue_button = (Button) findViewById(R.id.continue_button);
         continue_button.setOnClickListener(new View.OnClickListener() {
