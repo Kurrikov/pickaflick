@@ -15,18 +15,18 @@ import info.movito.themoviedbapi.model.core.MovieResultsPage;
  * Created by Keon on 11/4/2015.
  * This class will handle network calls and data retrieval
  */
-public class TmdbRunnable implements Runnable{
+public class TmdbExecutor {
 
     private TmdbMoviesObject tmdbMoviesobject;
     private String API_ID = "";
 
-    TmdbRunnable(TmdbMoviesObject tmdbMoviesobject, String API_ID){
+    TmdbExecutor(TmdbMoviesObject tmdbMoviesobject, String API_ID){
         this.tmdbMoviesobject = tmdbMoviesobject;
         this.API_ID = API_ID;
     }
 
     //run() is the main method of this class which does all the networking
-    public void run() {
+    public void execute() {
         Discover discover = tmdbMoviesobject.getDiscover();
         TmdbDiscover tmdbDiscover = null;
             if(hostIsReachable()) {      //check to see if the connection is good by connecting to the host's base address: http://api.themoviedb.org. This check will prevent the program from locking up later if there is very poor/no connection

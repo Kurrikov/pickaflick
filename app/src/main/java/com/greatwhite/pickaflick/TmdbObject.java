@@ -7,7 +7,8 @@ import info.movito.themoviedbapi.model.Discover;
  */
 public class TmdbObject {
 
-    private int NumberOfPages = 5;      //retrieves a total of at most 100 movies to begin with. Will eventually narrow down the list to 10.
+
+    private int NumberOfPages = 1;      //retrieves a total of at most 100 movies to begin with. Will eventually narrow down the list to 10.
     protected int era_low;
     protected int era_high;
     private Discover discover;
@@ -20,16 +21,18 @@ public class TmdbObject {
     }
 
     private void setDiscoverProperties(String MPAA_Rating, String GenreList,  String era_low, String era_high, float minRating){
+
         discover = new Discover(); //this is where we set our filtering criteria (not calling from database here)
         discover.page(NumberOfPages)
                 .language("en")
                 .sortBy("popularity.desc")      //sorts the list by popularity only (descending).
                 .withGenres(GenreList)
+                .includeAdult(false)
                 .voteAverageGte(minRating)
                 .voteCountGte(10)               //don't return movies that only have a small number of ratings
                 .releaseDateGte(String.valueOf(era_low) + "-01-01")
                 .releaseDateLte(String.valueOf(era_high) + "-12-31")
-                .certificationCountry("US")
+                .certificationCountry("GB")
                 .certificationLte(MPAA_Rating);
     }
     public Discover getDiscover(){

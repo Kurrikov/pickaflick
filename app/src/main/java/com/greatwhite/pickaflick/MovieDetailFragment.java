@@ -5,9 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
-
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import com.greatwhite.pickaflick.dummy.DummyContent;
 
 /**

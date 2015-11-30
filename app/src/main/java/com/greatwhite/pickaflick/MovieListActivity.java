@@ -3,6 +3,10 @@ package com.greatwhite.pickaflick;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.widget.TextView;
+import com.greatwhite.pickaflick.dummy.DummyContent;
+import java.util.ArrayList;
+
 
 
 /**
@@ -33,7 +37,36 @@ public class MovieListActivity extends FragmentActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_list);
+        //setContentView(R.layout.activity_movie_list);
+        setContentView(R.layout.activity_movie_twopane);
+
+        DummyContent.ITEMS.clear();
+        DummyContent.ITEM_MAP.clear();
+
+        Bundle bundle = getIntent().getExtras();
+
+        if(bundle != null) {
+            String InternetExceptionMessage = bundle.getString("Internet Exception"), InterruptionExceptionMessage = bundle.getString("Interruption Exception");
+            boolean NoErrors = InternetExceptionMessage.equals("") && InterruptionExceptionMessage.equals("");
+            if (NoErrors) {
+                int i = 0;
+                ArrayList<String> movieTitles, movieUrls;
+                movieTitles = bundle.getStringArrayList("movieTitles");
+                movieUrls = bundle.getStringArrayList("movieUrls");
+                if (movieTitles != null) {
+                    for (String title : movieTitles)
+                        DummyContent.addItem(new DummyContent.DummyItem(String.valueOf(i), title, movieUrls.get(i++)));
+                }
+                if (i == 0)  DummyContent.addItem(new DummyContent.DummyItem(String.valueOf(999), "No Movies Found", ""));
+
+            } else {
+                TextView ErrorView = (TextView) findViewById(R.id.ErrorText);
+                String ErrorMessage = "";
+                if (InternetExceptionMessage.equals("")) ErrorMessage = InterruptionExceptionMessage;
+                else ErrorMessage = InternetExceptionMessage;
+                ErrorView.setText(ErrorMessage);
+            }
+        }
 
         if (findViewById(R.id.movie_detail_container) != null) {
             // The detail container view will be present only in the
@@ -78,4 +111,21 @@ public class MovieListActivity extends FragmentActivity
             startActivity(detailIntent);
         }
     }
+
+
+//    //a quick method to show some of the features of the movieAttributes Class
+//    protected void temporaryMovieDisplayer(TextView textView, List<MovieAttributes> movieList){
+//        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+//                                                                            // You may change its size by passing in two additional int parameters
+//        String s = "";
+//        if(movieList != null && movieList.size() != 0){
+//            imageView = movieList.get(0).getImageView(imageView, 400, 400);    //this is how you can get the movie poster (in this case, for the 0th movie in the list).
+//            for(int i = 0; i < movieList.size(); i++)
+//                s = s + movieList.get(i).getTitle() + " (" + movieList.get(i).getReleaseDate().substring(0,4) + ")\n"; //print the title and release dates of the movies
+//        }
+//        else{
+//            s = "No movies to display";
+//        }
+//        textView.setText(s);
+//    }
 }
