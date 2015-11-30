@@ -2,109 +2,109 @@
 <items version="2" >
 
     <item
-        jar="/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.4.4/d3dad1a494f94579fca4b6a1142fb15fb68f0b2f/jackson-annotations-2.4.4.jar"
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.4.4\d3dad1a494f94579fca4b6a1142fb15fb68f0b2f\jackson-annotations-2.4.4.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="d3dad1a494f94579fca4b6a1142fb15fb68f0b2f">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/jackson-annotations-2.4.4-96c2f1c5d4c0493ea509fe210099408af6054450.jar" />
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.4.4-b216a221b0c69ecaca3e9714c2892511255e1f8e.jar" />
     </item>
     <item
-        jar="/Users/Administrator/.gradle/caches/modules-2/files-2.1/org.apache.directory.studio/org.apache.commons.io/2.4/b98d592c582262b3da8a871c7317f4902d98e996/org.apache.commons.io-2.4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b98d592c582262b3da8a871c7317f4902d98e996">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/org.apache.commons.io-2.4-5fe0a8a6d078788289c08476a52dae24c39db042.jar" />
-    </item>
-    <item
-        jar="/Users/Administrator/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-e5246cc2dbd6c194e6e951b456df60083afeea02.jar" />
-    </item>
-    <item
-        jar="/Users/Administrator/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.10/4b95f4897fa13f2cd904aee711aeafc0c5295cd8/commons-codec-1.10.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4b95f4897fa13f2cd904aee711aeafc0c5295cd8">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/commons-codec-1.10-d7945db4b1d1d189ef33d8a8b74daa2476bd11cf.jar" />
-    </item>
-    <item
-        jar="/Users/Administrator/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.7/56003dcd0a31deea6391b9e2ef2f2dc90b205a92/jcl-over-slf4j-1.7.7.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="56003dcd0a31deea6391b9e2ef2f2dc90b205a92">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/jcl-over-slf4j-1.7.7-cdebbe43b1eed1431ba0abd667abd502b01bf35c.jar" />
-    </item>
-    <item
-        jar="/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.4.4/e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee/jackson-databind-2.4.4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/jackson-databind-2.4.4-1a5662c7bbb63a621f101fe36aaaee3a83befc0e.jar" />
-    </item>
-    <item
-        jar="/Users/Administrator/pickaflick/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/classes-0b74aa018198d1e3e368cb7d43de0875f2ab61f3.jar" />
-    </item>
-    <item
-        jar="/Users/Administrator/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.7/2b8019b6249bb05d81d3a3094e468753e2b21311/slf4j-api-1.7.7.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="2b8019b6249bb05d81d3a3094e468753e2b21311">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/slf4j-api-1.7.7-b7371d058d75ecfb379cc5070216f747c15500e2.jar" />
-    </item>
-    <item
-        jar="/Users/Administrator/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/b1b6ea3b7e4aa4f492509a4952029cd8e48019ad/commons-io-2.4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/commons-io-2.4-8d7c98615e4edbb30071ce6d2236797c63194434.jar" />
-    </item>
-    <item
-        jar="/Users/Administrator/pickaflick/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/classes-8c34fab0955b70157bc69a1f42899b7fd09a6595.jar" />
-    </item>
-    <item
-        jar="/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.4.4/c5cd3347c0a86d0dcfbf3da593d8431d5a789d54/jackson-core-2.4.4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c5cd3347c0a86d0dcfbf3da593d8431d5a789d54">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/jackson-core-2.4.4-6c24f074776bb9563dda7071f51daeaa3fd4d7f8.jar" />
-    </item>
-    <item
-        jar="/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar"
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\18.0\cce0823396aa693798f8882e64213b1772032b09\guava-18.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="cce0823396aa693798f8882e64213b1772032b09">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/guava-18.0-e78ad4fff4c4d902fa5b12ee9ae28e34b20827a8.jar" />
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\guava-18.0-159e6d483cf552c1dff65cde519ef4a6af3d7d1b.jar" />
     </item>
     <item
-        jar="/Users/Administrator/pickaflick/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.7\2b8019b6249bb05d81d3a3094e468753e2b21311\slf4j-api-1.7.7.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="2b8019b6249bb05d81d3a3094e468753e2b21311">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\slf4j-api-1.7.7-16ee84bef3f2d7c9278aa9af2bd74283ba0591b6.jar" />
+    </item>
+    <item
+        jar="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-6e0101c018dff688b7ffa796bdc18d6c6c0202b4.jar" />
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-36b0bc690a6b54016263ffe625094f1b56b33dc7.jar" />
     </item>
     <item
-        jar="/Users/Administrator/.gradle/caches/modules-2/files-2.1/info.movito/themoviedbapi/1.1/f0d7f1b1f78fc422bf50c4c6868b72a4f0ca7abc/themoviedbapi-1.1.jar"
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.4\b1b6ea3b7e4aa4f492509a4952029cd8e48019ad\commons-io-2.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\commons-io-2.4-f391cc7adad161b5e40e2ba84c2efc2190f67792.jar" />
+    </item>
+    <item
+        jar="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\classes-45fe341087006a9b17c68c55d6a54e8850feaed0.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\info.movito\themoviedbapi\1.1\f0d7f1b1f78fc422bf50c4c6868b72a4f0ca7abc\themoviedbapi-1.1.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="f0d7f1b1f78fc422bf50c4c6868b72a4f0ca7abc">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/themoviedbapi-1.1-983227d4d4654ac85e68025ff19233e40fd92e0b.jar" />
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\themoviedbapi-1.1-745cd0b92208dfcbb178716d47f54d139d530df1.jar" />
     </item>
     <item
-        jar="/Users/Administrator/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.3.2/90a3822c38ec8c996e84c16a3477ef632cbc87a3/commons-lang3-3.3.2.jar"
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\org.apache.directory.studio\org.apache.commons.io\2.4\b98d592c582262b3da8a871c7317f4902d98e996\org.apache.commons.io-2.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b98d592c582262b3da8a871c7317f4902d98e996">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\org.apache.commons.io-2.4-0d62d2ce64d21d34237f6819c712b3d9a5e1c481.jar" />
+    </item>
+    <item
+        jar="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\classes-a4f71a8f1ff62688dc784e13e2031f7fe3a74ddc.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.4.4\c5cd3347c0a86d0dcfbf3da593d8431d5a789d54\jackson-core-2.4.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c5cd3347c0a86d0dcfbf3da593d8431d5a789d54">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\jackson-core-2.4.4-2da5b2022b317e9712649bfe4b51f3c6c81c1b03.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\org.slf4j\jcl-over-slf4j\1.7.7\56003dcd0a31deea6391b9e2ef2f2dc90b205a92\jcl-over-slf4j-1.7.7.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="56003dcd0a31deea6391b9e2ef2f2dc90b205a92">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\jcl-over-slf4j-1.7.7-33d9fa8392456e005a2d9accefe01ddb169d1d37.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.3.2\90a3822c38ec8c996e84c16a3477ef632cbc87a3\commons-lang3-3.3.2.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="90a3822c38ec8c996e84c16a3477ef632cbc87a3">
-        <dex dex="/Users/Administrator/pickaflick/app/build/intermediates/pre-dexed/debug/commons-lang3-3.3.2-8d8bd7b396d54e4f50cd804ae8cf63ad934159bf.jar" />
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\commons-lang3-3.3.2-101c5d7dbec30dba2331fe0ebe26b7e0b550aab7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.10\4b95f4897fa13f2cd904aee711aeafc0c5295cd8\commons-codec-1.10.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4b95f4897fa13f2cd904aee711aeafc0c5295cd8">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\commons-codec-1.10-483e4e27dca081b8a6ecb286483f11c3d3a2473f.jar" />
+    </item>
+    <item
+        jar="D:\Android SDK\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-4a55d333479c1c750c84e0d906b78af960182207.jar" />
+    </item>
+    <item
+        jar="C:\Users\Keon\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.4.4\e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee\jackson-databind-2.4.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee">
+        <dex dex="D:\Android\AndroidStudioProjects\pickaflick\app\build\intermediates\pre-dexed\debug\jackson-databind-2.4.4-cf8b317e02490489b492ec20010cdb360f858038.jar" />
     </item>
 
 </items>

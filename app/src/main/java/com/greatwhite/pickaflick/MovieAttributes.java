@@ -1,11 +1,12 @@
 package com.greatwhite.pickaflick;
 
-
+/*
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.widget.ImageView;
 import java.io.IOException;
 import java.net.URL;
+*/
 import info.movito.themoviedbapi.model.MovieDb;
 
 
@@ -17,25 +18,32 @@ import info.movito.themoviedbapi.model.MovieDb;
 public class MovieAttributes {
 
     private String title;
+    private String tmdbpageURL;
+
+    /*
     private String overview;
     private String imageURL;
     private int runtime;
     private int voteCount;
     private float ratings;
     private String releaseDate;
-    private String tmdbpageURL;
     private Bitmap movieImage;
+    */
 
     public MovieAttributes(MovieDb movie){
+
         title = movie.getTitle();
-        overview = movie.getOverview();
-        imageURL = "http://image.tmdb.org/t/p/w500" + movie.getPosterPath();
         tmdbpageURL = "https://www.themoviedb.org/movie/" + String.valueOf(movie.getId()) + "-" + titleParser() + "?language=en";
+
+        /*
+        imageURL = "http://image.tmdb.org/t/p/w500" + movie.getPosterPath();
+        overview = movie.getOverview();
         runtime = movie.getRuntime();
         ratings = movie.getVoteAverage();
         releaseDate = movie.getReleaseDate();
         voteCount = movie.getVoteCount();
         setImage();
+        */
     }
 
     private String titleParser(){
@@ -51,6 +59,12 @@ public class MovieAttributes {
         return title;
     }
 
+    public String getTmdbPageURL(){
+        return tmdbpageURL;
+    }
+
+    /* NOT USED IN THIS PROGRAM
+
     public String getOverview(){
         return overview;
     }
@@ -58,11 +72,6 @@ public class MovieAttributes {
     public String getImageURL() {
         return imageURL;
     }
-
-    public String getTmdbPageURL(){
-        return tmdbpageURL;
-    }
-
     public float getRatings() {
         return ratings;
     }
@@ -104,5 +113,6 @@ public class MovieAttributes {
         imageView.setImageBitmap(movieImage);
         return imageView;
     }
+    */
 
 }

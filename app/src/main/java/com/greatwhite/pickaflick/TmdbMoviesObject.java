@@ -20,7 +20,7 @@ public class TmdbMoviesObject extends TmdbObject {
     public void setMoviesList(List<MovieDb> movieDbs){
         if(movieDbs != null){
             moviesList = new ArrayList<MovieAttributes>();
-            int minSize = minimum(movieDbs.size(),25);
+            int minSize = minimum(movieDbs.size(),20);
             for (int i = 0; i < minSize; i++) {
                 this.moviesList.add(new MovieAttributes(movieDbs.get(i)));
             }
@@ -52,7 +52,7 @@ public class TmdbMoviesObject extends TmdbObject {
                                                                     // (There is way more than one way to do this.)
             @Override
             public int compare(MovieDb movieDb1, MovieDb movieDb2) {
-                return (int)(movieDb2.getVoteAverage()*Math.log10(movieDb2.getVoteCount()) - (movieDb1.getVoteAverage()*Math.log10(movieDb1.getVoteCount())));  //ratings have a heavier weight than the vote counts
+                return (int)(movieDb2.getVoteAverage()*Math.log10(movieDb2.getVoteCount()) - (movieDb1.getVoteAverage()*Math.log10(movieDb1.getVoteCount())));
             }
 
         });

@@ -3,13 +3,10 @@ package com.greatwhite.pickaflick;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.view.View;
 import android.widget.TextView;
-
 import com.greatwhite.pickaflick.dummy.DummyContent;
-
 import java.util.ArrayList;
-import java.util.List;
+
 
 
 /**
@@ -40,38 +37,36 @@ public class MovieListActivity extends FragmentActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_list);
+        //setContentView(R.layout.activity_movie_list);
+        setContentView(R.layout.activity_movie_twopane);
 
         DummyContent.ITEMS.clear();
         DummyContent.ITEM_MAP.clear();
 
         Bundle bundle = getIntent().getExtras();
 
-        TextView myTextView2 = (TextView) findViewById(R.id.textView4);
-
-        String ErrorMessage = "";  //if for whatever reason the fetchMoviesList() method fails, this message will contain the error information.
-
-
-        ArrayList<String> movieTitles;
-        ArrayList<String> movieUrls;
-        int i = 0;
-        if (bundle != null) {
-            movieTitles = bundle.getStringArrayList("movieTitles");
-            movieUrls = bundle.getStringArrayList("movieUrls");
-            if (movieTitles != null) {
-                for (String title : movieTitles) {
-                    DummyContent.addItem(new DummyContent.DummyItem(String.valueOf(i), title, movieUrls.get(i++)));
+        if(bundle != null) {
+            String InternetExceptionMessage = bundle.getString("Internet Exception"), InterruptionExceptionMessage = bundle.getString("Interruption Exception");
+            boolean NoErrors = InternetExceptionMessage.equals("") && InterruptionExceptionMessage.equals("");
+            if (NoErrors) {
+                int i = 0;
+                ArrayList<String> movieTitles, movieUrls;
+                movieTitles = bundle.getStringArrayList("movieTitles");
+                movieUrls = bundle.getStringArrayList("movieUrls");
+                if (movieTitles != null) {
+                    for (String title : movieTitles)
+                        DummyContent.addItem(new DummyContent.DummyItem(String.valueOf(i), title, movieUrls.get(i++)));
                 }
+                if (i == 0)  DummyContent.addItem(new DummyContent.DummyItem(String.valueOf(999), "No Movies Found", ""));
+
+            } else {
+                TextView ErrorView = (TextView) findViewById(R.id.ErrorText);
+                String ErrorMessage = "";
+                if (InternetExceptionMessage.equals("")) ErrorMessage = InterruptionExceptionMessage;
+                else ErrorMessage = InternetExceptionMessage;
+                ErrorView.setText(ErrorMessage);
             }
         }
-
-        if (i == 0) {
-            DummyContent.addItem(new DummyContent.DummyItem(String.valueOf(999), "No Movies Found", ""));
-        }
-
-        if(!ErrorMessage.equals("")) myTextView2.setText(ErrorMessage);     //display the error
-
-
 
         if (findViewById(R.id.movie_detail_container) != null) {
             // The detail container view will be present only in the

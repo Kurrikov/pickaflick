@@ -7,9 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
-
-
 import com.greatwhite.pickaflick.dummy.DummyContent;
 
 /**

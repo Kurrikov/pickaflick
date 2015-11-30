@@ -1,14 +1,13 @@
 package com.greatwhite.pickaflick;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
 
 public class MpaaRatings extends AppCompatActivity {
 
@@ -28,7 +27,7 @@ public class MpaaRatings extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //add to bundle and continue passing bundle to next activity
-                bundle.putString("mpaaratings", "R");
+                bundle.putString("mpaaratings", "18"); //Similar to R
                 intent.putExtras(bundle);
 
                 startActivity(intent);
@@ -38,7 +37,7 @@ public class MpaaRatings extends AppCompatActivity {
         Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                bundle.putString("mpaaratings", "PG-13");
+                bundle.putString("mpaaratings", "12"); //"Similar to PG 13"
                 intent.putExtras(bundle);
 
                 startActivity(intent);
@@ -58,7 +57,7 @@ public class MpaaRatings extends AppCompatActivity {
         Button button4 = (Button) findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                bundle.putString("mpaaratings", "G");
+                bundle.putString("mpaaratings", "U");  //Same as G
                 intent.putExtras(bundle);
 
                 startActivity(intent);
