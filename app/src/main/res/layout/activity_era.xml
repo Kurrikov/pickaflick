@@ -20,14 +20,36 @@
         android:textColor="#eb000000"
         android:textSize="@dimen/abc_text_size_display_1_material" />
 
+    <TextView
+        android:id="@+id/minView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Minimum year: 1900"
+        android:layout_below="@+id/eraTitle"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
 
+    <TextView
+        android:id="@+id/maxView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Maximum year: 2020"
+        android:layout_below="@+id/eraTitle"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        />
 
     <io.apptik.widget.MultiSlider
         android:id="@+id/range_slider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/eraTitle"
-        android:layout_marginTop="35dp"
+        android:layout_below="@+id/minView"
+        android:layout_marginTop="20dp"
 
         app:thumbNumber="2"
         app:range1="@drawable/multislider_scrubber_track_holo_light"
@@ -36,28 +58,6 @@
         app:scaleMin="1900"
         app:scaleMax="2020"
         app:scaleStep="10"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Minimum year: 1900"
-        android:id="@+id/minView"
-        android:layout_below="@+id/range_slider"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentLeft="true"
-    />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Maximum year: 2020"
-        android:id="@+id/maxView"
-        android:layout_below="@+id/range_slider"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentRight="true"
         />
 
     <Button
@@ -80,9 +80,6 @@
         android:id="@+id/textView5"
         android:layout_above="@+id/continue_button"
         android:layout_centerHorizontal="true"
-    />
-
-
-
+        />
 
 </RelativeLayout>

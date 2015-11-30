@@ -25,67 +25,9 @@ public class Era extends ActionBarActivity {
         final Intent intent = new Intent(Era.this, MpaaRatings.class);
         final Bundle bundle = getIntent().getExtras();
 
-
         // TextView for debugging
         TextView myTextView = (TextView) findViewById(R.id.textView5);
         myTextView.setText("The genre is " + bundle.getString("genre"));
-
-//        Button button1 = (Button) findViewById(R.id.button1);
-//        button1.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                //add to bundle and continue passing bundle to next activity
-//                bundle.putString("era_low", "2010");
-//                bundle.putString("era_high", "2020");
-//                intent.putExtras(bundle);
-//
-//                startActivity(intent);
-//            }
-//        });
-//
-//        Button button3 = (Button) findViewById(R.id.button3);
-//        button3.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                bundle.putString("era_low", "2000");
-//                bundle.putString("era_high", "2020");
-//                intent.putExtras(bundle);
-//
-//                startActivity(intent);
-//            }
-//        });
-//
-//        Button button2 = (Button) findViewById(R.id.button2);
-//        button2.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                bundle.putString("era_low", "1990");
-//                bundle.putString("era_high", "2020");
-//                intent.putExtras(bundle);
-//
-//                startActivity(intent);
-//            }
-//        });
-//
-//        Button button5 = (Button) findViewById(R.id.button5);
-//        button5.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                bundle.putString("era_low", "1980");
-//                bundle.putString("era_high", "2020");
-//                intent.putExtras(bundle);
-//
-//                startActivity(intent);
-//            }
-//        });
-//
-//        Button button4 = (Button) findViewById(R.id.button4);
-//        button4.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                bundle.putString("era_low", "1970");
-//                bundle.putString("era_high", "2020");
-//                intent.putExtras(bundle);
-//
-//                startActivity(intent);
-//            }
-//        });
-
 
         final TextView minView = (TextView) findViewById(R.id.minView);
         final TextView maxView = (TextView) findViewById(R.id.maxView);
