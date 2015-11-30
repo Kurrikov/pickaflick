@@ -35,9 +35,9 @@ public class MovieRating extends AppCompatActivity {
         bar.setVisibility(View.INVISIBLE);
 
         // for debugging era input:
-        bundle = getIntent().getExtras();
-        TextView mpaaDebug = (TextView) findViewById(R.id.mpaaDebug);
-        mpaaDebug.setText("The maximum MPAA rating is " + bundle.getString("mpaaratings"));
+//        bundle = getIntent().getExtras();
+//        TextView mpaaDebug = (TextView) findViewById(R.id.mpaaDebug);
+//        mpaaDebug.setText("The maximum MPAA rating is " + bundle.getString("mpaaratings"));
 
 
         final TextView minScoreView = (TextView) findViewById(R.id.minScoreView);

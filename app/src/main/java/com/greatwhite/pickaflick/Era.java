@@ -26,8 +26,8 @@ public class Era extends ActionBarActivity {
         final Bundle bundle = getIntent().getExtras();
 
         // TextView for debugging
-        TextView myTextView = (TextView) findViewById(R.id.textView5);
-        myTextView.setText("The genre is " + bundle.getString("genre"));
+//        TextView myTextView = (TextView) findViewById(R.id.textView5);
+//        myTextView.setText("The genre is " + bundle.getString("genre"));
 
         final TextView minView = (TextView) findViewById(R.id.minView);
         final TextView maxView = (TextView) findViewById(R.id.maxView);

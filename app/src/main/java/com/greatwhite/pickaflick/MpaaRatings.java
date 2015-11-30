@@ -21,8 +21,8 @@ public class MpaaRatings extends AppCompatActivity {
         final Bundle bundle = getIntent().getExtras();
 
         // for debugging era input:
-        TextView eraDebug = (TextView) findViewById(R.id.eraDebug);
-        eraDebug.setText("The minimum year is " + bundle.getString("era_low") + "\nThe maximum year is " + bundle.getString("era_high"));
+//        TextView eraDebug = (TextView) findViewById(R.id.eraDebug);
+//        eraDebug.setText("The minimum year is " + bundle.getString("era_low") + "\nThe maximum year is " + bundle.getString("era_high"));
 
         Button RButton = (Button) findViewById(R.id.R_button);
         RButton.setOnClickListener(new View.OnClickListener() {
