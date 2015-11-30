@@ -1,7 +1,6 @@
 package com.greatwhite.pickaflick;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -18,14 +17,14 @@ public class MpaaRatings extends AppCompatActivity {
         setContentView(R.layout.activity_mpaa_ratings);
 
         final Intent intent = new Intent(MpaaRatings.this, MovieRating.class);
-
         final Bundle bundle = getIntent().getExtras();
 
-//        TextView myTextView = (TextView) findViewById(R.id.textView6);
-//        myTextView.setText("The era is " + bundle.getString("era"));
+        // for debugging era input:
+        TextView eraDebug = (TextView) findViewById(R.id.eraDebug);
+        eraDebug.setText("The minimum year is " + bundle.getString("era_low") + "\nThe maximum year is " + bundle.getString("era_high"));
 
-        Button button1 = (Button) findViewById(R.id.button1);
-        button1.setOnClickListener(new View.OnClickListener() {
+        Button RButton = (Button) findViewById(R.id.R_button);
+        RButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //add to bundle and continue passing bundle to next activity
                 bundle.putString("mpaaratings", "R");
@@ -35,8 +34,8 @@ public class MpaaRatings extends AppCompatActivity {
             }
         });
 
-        Button button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
+        Button PG13Button = (Button) findViewById(R.id.PG13_button);
+        PG13Button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 bundle.putString("mpaaratings", "PG-13");
                 intent.putExtras(bundle);
@@ -45,8 +44,8 @@ public class MpaaRatings extends AppCompatActivity {
             }
         });
 
-        Button button3 = (Button) findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
+        Button PGButton = (Button) findViewById(R.id.PG_button);
+        PGButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 bundle.putString("mpaaratings", "PG");
                 intent.putExtras(bundle);
@@ -55,8 +54,8 @@ public class MpaaRatings extends AppCompatActivity {
             }
         });
 
-        Button button4 = (Button) findViewById(R.id.button4);
-        button4.setOnClickListener(new View.OnClickListener() {
+        Button GButton = (Button) findViewById(R.id.G_button);
+        GButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 bundle.putString("mpaaratings", "G");
                 intent.putExtras(bundle);

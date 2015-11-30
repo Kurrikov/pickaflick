@@ -3,28 +3,32 @@ import info.movito.themoviedbapi.model.Discover;
 
 /**
  * Created by Keon on 11/4/2015.
+ * Modified by Jason on 2015-11-27 -- Added handling for low and high limits for era
  */
 public class TmdbObject {
 
     private int NumberOfPages = 5;      //retrieves a total of at most 100 movies to begin with. Will eventually narrow down the list to 10.
-    protected int era;
+    protected int era_low;
+    protected int era_high;
     private Discover discover;
     //private Map<String,String> map;
 
-    TmdbObject(String MPAA_Rating, String genre, String era, String minRating){
-        this.era = Integer.parseInt(era);
-        setDiscoverProperties(MPAA_Rating,genre,this.era,Float.parseFloat(minRating));
+    TmdbObject(String MPAA_Rating, String genre, String era_low, String era_high, String minRating){
+        this.era_low = Integer.parseInt(era_low);
+        this.era_high = Integer.parseInt(era_high);
+        setDiscoverProperties(MPAA_Rating, genre, era_low, era_high, Float.parseFloat(minRating));
     }
 
-    private void setDiscoverProperties(String MPAA_Rating, String GenreList,  int decade, float minRating){
+    private void setDiscoverProperties(String MPAA_Rating, String GenreList,  String era_low, String era_high, float minRating){
         discover = new Discover(); //this is where we set our filtering criteria (not calling from database here)
         discover.page(NumberOfPages)
                 .language("en")
                 .sortBy("popularity.desc")      //sorts the list by popularity only (descending).
                 .withGenres(GenreList)
                 .voteAverageGte(minRating)
-                .releaseDateGte(String.valueOf(decade) + "-01-01")
-                .releaseDateLte(String.valueOf(decade + 9) + "-12-31")
+                .voteCountGte(10)               //don't return movies that only have a small number of ratings
+                .releaseDateGte(String.valueOf(era_low) + "-01-01")
+                .releaseDateLte(String.valueOf(era_high) + "-12-31")
                 .certificationCountry("US")
                 .certificationLte(MPAA_Rating);
     }

@@ -9,16 +9,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import io.apptik.widget.MultiSlider;
 
 public class MovieRating extends AppCompatActivity {
     ProgressBar bar = null;
     Bundle bundle;
     Intent intent;
     String rating;
+    float scoreMin = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,23 +33,30 @@ public class MovieRating extends AppCompatActivity {
         bar = (ProgressBar) findViewById(R.id.progressBar);
         bar.setVisibility(View.INVISIBLE);
 
-        Button button1 = (Button) findViewById(R.id.button1);
-        button1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                onButtonClick("9.0");
+        // for debugging era input:
+        bundle = getIntent().getExtras();
+        TextView mpaaDebug = (TextView) findViewById(R.id.mpaaDebug);
+        mpaaDebug.setText("The maximum MPAA rating is " + bundle.getString("mpaaratings"));
+
+
+        final TextView minScoreView = (TextView) findViewById(R.id.minScoreView);
+        MultiSlider scoreSlider = (MultiSlider) findViewById(R.id.score_slider);
+        scoreSlider.setOnThumbValueChangeListener(new MultiSlider.OnThumbValueChangeListener() {
+            @Override
+            public void onValueChanged(MultiSlider multiSlider, MultiSlider.Thumb thumb, int thumbIndex, int value) {
+                scoreMin = (float) value / 2;
+                minScoreView.setText("Minimum rating: " + String.valueOf(scoreMin));
             }
         });
 
-        Button button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
+        // Continue button for moving to the next activity
+        Button continueButton = (Button) findViewById(R.id.continue_button);
+        continueButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                onButtonClick("7.5");           }
-        });
+                //Start loading indicator
+                bar.setVisibility(View.VISIBLE);
 
-        Button button3 = (Button) findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                onButtonClick("5.0");
+                new FetchMoviesTask().execute((URL) null);
             }
         });
     }
@@ -57,9 +68,9 @@ public class MovieRating extends AppCompatActivity {
         new FetchMoviesTask().execute((URL)null);
     }
 
-    protected List<MovieAttributes> fetchMoviesList(String mpaa_Ratings, String genre, String era, String minRating) throws TmdbExecutor.NoInternetConnectionException, InterruptedException{
+    protected List<MovieAttributes> fetchMoviesList(String mpaa_Ratings, String genre, String era_low, String era_high, String minRating) throws TmdbExecutor.NoInternetConnectionException, InterruptedException{
         final String API_ID = "d2148dac5e85b1dee3f0fe5e2c3a83ab";
-        TmdbMoviesObject tmdbMoviesobject = new TmdbMoviesObject(mpaa_Ratings, genre, era, minRating);
+        TmdbMoviesObject tmdbMoviesobject = new TmdbMoviesObject(mpaa_Ratings, genre, era_low, era_high, minRating);
         new TmdbExecutor(tmdbMoviesobject, API_ID).execute();
 
         if(tmdbMoviesobject.getMoviesList()== null){
@@ -96,7 +107,7 @@ public class MovieRating extends AppCompatActivity {
             bundle = getIntent().getExtras();
             intent = new Intent(MovieRating.this, MovieListActivity.class);
 
-            bundle.putString("movierating", rating);
+            bundle.putString("minScore", String.valueOf(scoreMin));
 
             //Retrieve movie list and store in bundle
             List<MovieAttributes> movieList = null;
@@ -104,7 +115,7 @@ public class MovieRating extends AppCompatActivity {
             ArrayList<String> movieUrls = new ArrayList();
 
             try {
-                movieList = fetchMoviesList(bundle.getString("mpaaratings"), bundle.getString("genre"), bundle.getString("era"), bundle.getString("movierating"));
+                movieList = fetchMoviesList(bundle.getString("mpaaratings"), bundle.getString("genre"), bundle.getString("era_low"), bundle.getString("era_high"), bundle.getString("minScore"));
                 for(MovieAttributes item : movieList)
                 {
                     movieTitles.add(item.getTitle());

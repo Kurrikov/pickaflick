@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/title_activity_mpaa_ratings"
-        android:id="@+id/textView2"
+        android:id="@+id/mpaaInstruction"
         android:layout_marginTop="0dp"
         android:textColor="#eb000000"
         android:textSize="@dimen/abc_text_size_display_1_material" />
@@ -21,9 +21,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/r_rating"
-        android:id="@+id/button1"
-        android:background="#b4ff0000"
-        android:layout_below="@+id/textView2"
+        android:id="@+id/R_button"
+        android:layout_below="@+id/mpaaInstruction"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="40dp" />
@@ -32,9 +31,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/pg13_rating"
-        android:id="@+id/button2"
-        android:background="#b4ff0000"
-        android:layout_below="@+id/button1"
+        android:id="@+id/PG13_button"
+        android:layout_below="@+id/R_button"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="33dp" />
@@ -43,9 +41,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/pg_rating"
-        android:id="@+id/button3"
-        android:background="#b4ff0000"
-        android:layout_below="@+id/button2"
+        android:id="@+id/PG_button"
+        android:layout_below="@+id/PG13_button"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="33dp" />
@@ -54,10 +51,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/g_rating"
-        android:id="@+id/button4"
-        android:background="#b4ff0000"
+        android:id="@+id/G_button"
         android:layout_marginTop="33dp"
-        android:layout_below="@+id/button3"
+        android:layout_below="@+id/PG_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -66,7 +62,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=""
-        android:id="@+id/textView6"
+        android:id="@+id/eraDebug"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
