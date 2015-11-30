@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 public class MpaaRatings extends AppCompatActivity {
 
     @Override
@@ -27,7 +28,7 @@ public class MpaaRatings extends AppCompatActivity {
         RButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //add to bundle and continue passing bundle to next activity
-                bundle.putString("mpaaratings", "R");
+                bundle.putString("mpaaratings", "18"); //Similar to R
                 intent.putExtras(bundle);
 
                 startActivity(intent);
@@ -37,7 +38,7 @@ public class MpaaRatings extends AppCompatActivity {
         Button PG13Button = (Button) findViewById(R.id.PG13_button);
         PG13Button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                bundle.putString("mpaaratings", "PG-13");
+                bundle.putString("mpaaratings", "12"); //"Similar to PG 13"
                 intent.putExtras(bundle);
 
                 startActivity(intent);
@@ -57,7 +58,7 @@ public class MpaaRatings extends AppCompatActivity {
         Button GButton = (Button) findViewById(R.id.G_button);
         GButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                bundle.putString("mpaaratings", "G");
+                bundle.putString("mpaaratings", "U");  //Same as G
                 intent.putExtras(bundle);
 
                 startActivity(intent);
