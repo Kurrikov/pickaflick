@@ -33,7 +33,7 @@ public class MovieAttributes {
     public MovieAttributes(MovieDb movie){
 
         title = movie.getTitle();
-        tmdbpageURL = "https://www.themoviedb.org/movie/" + String.valueOf(movie.getId()) + "-" + titleParser() + "?language=en";
+        tmdbpageURL = "https://www.themoviedb.org/movie/" + String.valueOf(movie.getId());
 
         /*
         imageURL = "http://image.tmdb.org/t/p/w500" + movie.getPosterPath();
@@ -46,19 +46,6 @@ public class MovieAttributes {
         */
     }
 
-    /**
-     * Parse a movie title into a URL substring for TMDb. This parsing is done by replacing spaces with hyphens.
-     * @return
-     */
-    private String titleParser(){
-        String URLtitle = "";
-        for(int i = 0 ; i < title.length() ; i++){
-            if(i < title.length() - 1 && title.substring(i,i+1).equals(" ")) URLtitle = URLtitle + "-";
-            else URLtitle = URLtitle + title.charAt(i);
-        }
-        return URLtitle;
-    }
-
     public String getTitle(){
         return title;
     }
@@ -67,7 +54,9 @@ public class MovieAttributes {
         return tmdbpageURL;
     }
 
-    /* NOT USED IN THIS PROGRAM
+    // The following are methods that involve features provided by the API that could prove useful in the future.
+    // Currently, they are unused in Pickaflick, so they are commented out.
+    /*
 
     public String getOverview(){
         return overview;
