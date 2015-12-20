@@ -36,9 +36,9 @@ public class TmdbMoviesObject extends TmdbObject {
         return this.moviesList;
     }
 
-    //the default tmdb method does a poor job in filtering movies by years of release, so this method was added to rectify that issue
-    //this will also prioritize the order based on voteCounts and vote Averages (the Ratings) combined. This will hopefully manage to filter out lower quality
-    // movies that made their way into the list, such as those with too few votes to be considered legitimate
+    // The default TMDb method does a poor job in filtering movies by years of release, so this method was added to rectify that issue
+    // This will also prioritize the order based on voteCounts and vote Averages (the Ratings) combined. This will hopefully manage
+    // to filter out lower quality movies that made their way into the list, such as those with too few votes to be considered legitimate
     public List<MovieDb> listCorrector(List<MovieDb> movieDbs) {
 
         //remove "out of date" movies

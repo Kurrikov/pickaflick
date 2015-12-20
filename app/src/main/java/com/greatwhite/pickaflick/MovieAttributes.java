@@ -46,6 +46,10 @@ public class MovieAttributes {
         */
     }
 
+    /**
+     * Parse a movie title into a URL substring for TMDb. This parsing is done by replacing spaces with hyphens.
+     * @return
+     */
     private String titleParser(){
         String URLtitle = "";
         for(int i = 0 ; i < title.length() ; i++){

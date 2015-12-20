@@ -16,7 +16,6 @@ import info.movito.themoviedbapi.model.core.MovieResultsPage;
  * This class will handle network calls and data retrieval
  */
 public class TmdbExecutor {
-
     private TmdbMoviesObject tmdbMoviesobject;
     private String API_ID = "";
 
@@ -25,11 +24,18 @@ public class TmdbExecutor {
         this.API_ID = API_ID;
     }
 
-    //run() is the main method of this class which does all the networking
+    /**
+     * This method will test the network connection to the movie database. If a connection can be established,
+     * it will pull a list of movies from the database that meet the filter parameters. The list is then filtered
+     * further and sorted using the listCorrector.
+     * @return void
+     */
     public void execute() {
         Discover discover = tmdbMoviesobject.getDiscover();
         TmdbDiscover tmdbDiscover = null;
-            if(hostIsReachable()) {      //check to see if the connection is good by connecting to the host's base address: http://api.themoviedb.org. This check will prevent the program from locking up later if there is very poor/no connection
+            // Check the network connection by connecting to the host's base address: http://api.themoviedb.org.
+            // This check will prevent the program from locking up later if there is very poor/no connection
+            if(hostIsReachable()) {
                 tmdbDiscover = new TmdbApi(API_ID).getDiscover();
                 MovieResultsPage movieResultsPage = tmdbDiscover.getDiscover(discover);
                 List<MovieDb> filteredMovies = tmdbMoviesobject.listCorrector(movieResultsPage.getResults());
@@ -37,8 +43,11 @@ public class TmdbExecutor {
             }
     }
 
-    //if the host can't be reached in less than 5 seconds, abort the connection.
-    // Exception throwing is not done in this class, since run() does not support it.
+    /**
+     * Check if a connection can be established with The Movie Database. Exception throwing is
+     * not done in this class, since execute() does not support it.
+     * @return true if a connection to The Movie Database can be established; false otherwise
+     */
     private boolean hostIsReachable(){
         try {
             InetAddress hostIP = InetAddress.getByAddress(new byte[]{(byte) 54, (byte) 174, (byte) 111, (byte) 151});

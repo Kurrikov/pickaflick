@@ -30,7 +30,7 @@ public class MovieRating extends AppCompatActivity {
 
         bundle = getIntent().getExtras();
 
-        //Turn off loading indicator
+        // Set loading indicator as invisible when this view is initially loaded
         bar = (ProgressBar) findViewById(R.id.progressBar);
         bar.setVisibility(View.INVISIBLE);
 
@@ -55,7 +55,7 @@ public class MovieRating extends AppCompatActivity {
         continueButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 bundle.putString("minScore", String.valueOf(scoreMin));
-                //Start loading indicator
+                // Start loading indicator
                 bar.setVisibility(View.VISIBLE);
 
                 new FetchMoviesTask().execute((URL) null);
